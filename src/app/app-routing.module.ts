@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { SettingsModule } from 'app/settings/settings.module'
-import { SettingsComponent } from 'app/settings/settings.component'
+// import { SettingsModule } from 'app/settings/settings.module'
+// import { SettingsComponent } from 'app/settings/settings.component'
 
 const routes: Routes = [
   {
@@ -10,7 +10,7 @@ const routes: Routes = [
   },
   {
     path: 'settings',
-    component: SettingsComponent
+    loadChildren: 'app/settings/settings.module#SettingsModule'
   },
   {
     path: 'stats',
@@ -19,7 +19,10 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes), SettingsModule],
+  imports: [
+    RouterModule.forRoot(routes),
+//    SettingsModule
+    ],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
