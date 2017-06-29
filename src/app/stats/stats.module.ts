@@ -7,4 +7,4 @@ import { routing } from './stats.routing';
   imports: [routing],
   declarations: [StatsComponent]
 })
-export class StatsModule {}
+export class StatsModule { }

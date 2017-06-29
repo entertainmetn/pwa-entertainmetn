@@ -4,7 +4,10 @@ import { Routes, RouterModule } from '@angular/router';
 import { StatsComponent } from './stats.component';
 
 const routes: Routes = [
-  { path: '', component: StatsComponent }
+  {
+    path: '',
+    component: StatsComponent
+  }
 ];
 
 export const routing: ModuleWithProviders = RouterModule.forChild(routes);
