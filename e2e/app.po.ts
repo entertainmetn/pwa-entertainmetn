@@ -1,6 +1,6 @@
 import { browser, by, element } from 'protractor';
 
-export class Xstr.MePage {
+export class XstrMePage {
   navigateTo() {
     return browser.get('/');
   }

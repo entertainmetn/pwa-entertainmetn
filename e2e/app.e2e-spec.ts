@@ -1,10 +1,10 @@
-import { Xstr.MePage } from './app.po';
+import { XstrMePage } from './app.po';
 
 describe('xstr.me App', () => {
-  let page: Xstr.MePage;
+  let page: XstrMePage;
 
   beforeEach(() => {
-    page = new Xstr.MePage();
+    page = new XstrMePage();
   });
 
   it('should display welcome message', () => {
