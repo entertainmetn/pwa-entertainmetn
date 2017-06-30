@@ -4,7 +4,11 @@ import { StatsComponent } from './stats.component';
 import { routing } from './stats.routing';
 
 @NgModule({
-  imports: [routing],
-  declarations: [StatsComponent]
+  imports: [
+    routing
+    ],
+  declarations: [
+    StatsComponent
+    ]
 })
 export class StatsModule { }
