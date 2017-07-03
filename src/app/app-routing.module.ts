@@ -1,8 +1,10 @@
+import { browser } from 'protractor';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { SettingsModule } from 'app/pages/settings/settings.module'
 import { ErrorPageModule } from 'app/pages/error-page/error-page.module';
+import { BrowseModule } from './pages/browse/browse.module';
 import { HomeComponent } from 'app/pages/home/home.component';
 
 const routes: Routes = [
@@ -13,7 +15,7 @@ const routes: Routes = [
   },
   {
     path: 'stats',
-    loadChildren: 'app/stats/stats.module#StatsModule' // lazyLoaded Module(with routes)
+    loadChildren: 'app/pages/stats/stats.module#StatsModule' // lazyLoaded Module(with routes)
   },
   {
     path: '**',
@@ -27,6 +29,7 @@ const routes: Routes = [
       routes,
       { enableTracing: true } // <-- debugging purposes only
     ),
+    BrowseModule,
     SettingsModule,
     ErrorPageModule
   ],
