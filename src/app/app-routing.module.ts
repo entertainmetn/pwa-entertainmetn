@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { SettingsModule } from 'app/settings/settings.module'
-import { ErrorPageModule } from 'app/error-page/error-page.module';
-import { HomeComponent } from './home/home.component';
+import { SettingsModule } from 'app/pages/settings/settings.module'
+import { ErrorPageModule } from 'app/pages/error-page/error-page.module';
+import { HomeComponent } from 'app/pages/home/home.component';
 
 const routes: Routes = [
   {
