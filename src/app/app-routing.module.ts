@@ -1,16 +1,19 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-// import { SettingsModule } from 'app/settings/settings.module'
+import { SettingsModule } from 'app/settings/settings.module'
+import { ErrorPageModule } from 'app/error-page/error-page.module';
 // import { SettingsComponent } from 'app/settings/settings.component'
 
 const routes: Routes = [
   {
-    path: '',
-    children: []
+    path: '404',
+    loadChildren: () => ErrorPageModule,
   },
   {
     path: 'settings',
-    loadChildren: 'app/settings/settings.module#SettingsModule'
+    loadChildren: () => SettingsModule,
+    // pathMatch: 'full'
+    // loadChildren: 'app/settings/settings.module#SettingsModule'
   },
   {
     path: 'stats',
@@ -20,9 +23,13 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes),
-//    SettingsModule
-    ],
+    RouterModule.forRoot(
+      routes,
+      { enableTracing: true } // <-- debugging purposes only
+    ),
+    SettingsModule,
+    ErrorPageModule
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
