@@ -5,7 +5,7 @@ import { ErrorPageComponent } from './error-page.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: '404',
     component: ErrorPageComponent
   }
 ];

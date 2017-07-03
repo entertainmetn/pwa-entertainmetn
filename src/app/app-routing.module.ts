@@ -6,15 +6,19 @@ import { ErrorPageModule } from 'app/error-page/error-page.module';
 
 const routes: Routes = [
   {
+    path: '',
+    children: []
+  },
+/*  {
     path: '404',
-    loadChildren: () => ErrorPageModule,
+    loadChildren: () => ErrorPageModule
   },
   {
     path: 'settings',
-    loadChildren: () => SettingsModule,
+    loadChildren: () => SettingsModule
     // pathMatch: 'full'
     // loadChildren: 'app/settings/settings.module#SettingsModule'
-  },
+  },*/
   {
     path: 'stats',
     loadChildren: 'app/stats/stats.module#StatsModule'
