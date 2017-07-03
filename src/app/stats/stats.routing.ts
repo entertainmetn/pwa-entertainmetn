@@ -5,7 +5,7 @@ import { StatsComponent } from './stats.component';
 
 const routes: Routes = [
   {
-    path: 'stats',
+    path: '',
     component: StatsComponent
   }
 ];
