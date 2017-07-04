@@ -1,11 +1,12 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { ActivatedRoute, Router } from '@angular/router';
+// import { ActivatedRoute, Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
+import { BrowseService } from './../browse.service';
 import { TVShowsComponent } from './tvshows.component';
 
 // ADDED MOCK CLASS
-export class MockActivatedRoute {
+/*export class MockActivatedRoute {
   private subject = new BehaviorSubject(this.testParams);
   params = this.subject.asObservable();
 
@@ -18,26 +19,34 @@ export class MockActivatedRoute {
 }
 export class MockRouter {
   public navigateByUrl(url: string): void { }
+}*/
+export class MockBrowserService {
+  private _id = 'testID';
+  set id(testID: string) { this._id = testID; }
+  public getIDfromActiveRoute(): string {
+    return this._id;
+  }
+
+  public restRoute(): void {
+    // this.sub.unsubscribe();
+  }
 }
 
+
 describe('TVShowsComponent', () => {
-  let mockRouter: MockRouter;
-  let mockActivatedRoute: MockActivatedRoute;
+  let mockBrowserService: MockBrowserService;
   let component: TVShowsComponent;
   let fixture: ComponentFixture<TVShowsComponent>;
 
   beforeEach(async(() => {
-    mockRouter = new MockRouter();
-    mockActivatedRoute = new MockActivatedRoute();
-    mockActivatedRoute.testParams = { id: 'testID' };
+    mockBrowserService = new MockBrowserService();
     TestBed.configureTestingModule({
       providers: [
-        { provide: ActivatedRoute, useValue: mockActivatedRoute },
-        { provide: Router, useValue: mockRouter }
+        { provide: BrowseService, useValue: mockBrowserService }
       ],
-      declarations: [ TVShowsComponent ]
+      declarations: [TVShowsComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -50,7 +59,7 @@ describe('TVShowsComponent', () => {
     expect(component).toBeTruthy();
   });
   it('should redirect to 404 if starting with "d"', () => {
-    mockActivatedRoute.testParams = { id: 'dtestID' };
+    mockBrowserService.id = 'dtestID';
     expect(component).toBeTruthy();
     // expect(mockRouter.navigateByUrl('dtestID')).toHaveBeenCalled();
   });
