@@ -4,7 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 @Injectable()
 export class BrowseService {
 
-  id = 'default';
+  private id; string;
   private sub: any;
 
   constructor(private router: Router, private route: ActivatedRoute) {
@@ -14,6 +14,8 @@ export class BrowseService {
         console.log(router);
         console.log(route);
         this.id = params['id'];
+      } else {
+        this.id = 'default';
       }
       // if (this.id.toString().startsWith('d')) { this.router.navigateByUrl('/404') }
     });

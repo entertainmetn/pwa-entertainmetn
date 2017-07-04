@@ -33,7 +33,7 @@ describe('BrowseService', () => {
         { provide: ActivatedRoute, useValue: mockActivatedRoute },
         { provide: Router, useValue: mockRouter },
         BrowseService
-        ]
+      ]
     });
   });
 
@@ -56,7 +56,7 @@ describe('BrowseService', () => {
   it('should not fall on null', inject([BrowseService], (service: BrowseService) => {
 
     mockActivatedRoute.testParams = { id: null };
-    expect(service.getIDfromActiveRoute()).toBe('testID');
+    expect(service.getIDfromActiveRoute()).toBe('default');
   }));
 
   it('should close gracefully', inject([BrowseService], (service: BrowseService) => {
