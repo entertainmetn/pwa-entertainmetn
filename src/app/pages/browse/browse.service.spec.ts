@@ -40,4 +40,28 @@ describe('BrowseService', () => {
   it('should be created', inject([BrowseService], (service: BrowseService) => {
     expect(service).toBeTruthy();
   }));
+
+  it('should return ID', inject([BrowseService], (service: BrowseService) => {
+
+    mockActivatedRoute.testParams = { id: 'testID' };
+    expect(service.getIDfromActiveRoute()).toBe('testID');
+  }));
+
+  it('should return defaultID', inject([BrowseService], (service: BrowseService) => {
+
+    mockActivatedRoute.testParams = { id: 'dtestID' };
+    expect(service.getIDfromActiveRoute()).toBe('dtestID');
+  }));
+
+  it('should not fall on null', inject([BrowseService], (service: BrowseService) => {
+
+    mockActivatedRoute.testParams = { id: null };
+    expect(service.getIDfromActiveRoute()).toBe('testID');
+  }));
+
+  it('should close gracefully', inject([BrowseService], (service: BrowseService) => {
+
+    service.restRoute();
+    expect(service).toBeTruthy();
+  }));
 });
