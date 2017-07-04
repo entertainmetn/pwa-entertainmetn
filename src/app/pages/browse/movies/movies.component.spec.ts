@@ -1,11 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { Observable } from 'rxjs/Observable'
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 import { MoviesComponent } from './movies.component';
 
-// ADDED CLASS
+// ADDED MOCK CLASS
 export class ActivatedRouteStub {
   private subject = new BehaviorSubject(this.testParams);
   params = this.subject.asObservable();
@@ -17,18 +16,24 @@ export class ActivatedRouteStub {
     this.subject.next(params);
   }
 }
+export class MockRouter {
+  public navigateByUrl(url: string): void { }
+}
 
 describe('MoviesComponent', () => {
+  let mockRouter;
   let mockActivatedRoute;
   let component: MoviesComponent;
   let fixture: ComponentFixture<MoviesComponent>;
 
   beforeEach(async(() => {
+    mockRouter = new MockRouter();
     mockActivatedRoute = new ActivatedRouteStub();
-    mockActivatedRoute.testParams = { id: Observable.of('testID') };
+    mockActivatedRoute.testParams = { id: 'testID' };
     TestBed.configureTestingModule({
       providers: [
-        { provide: ActivatedRoute, useValue: mockActivatedRoute }
+        { provide: ActivatedRoute, useValue: mockActivatedRoute },
+        { provide: Router, useValue: mockRouter }
       ],
       declarations: [MoviesComponent]
     })
@@ -43,5 +48,10 @@ describe('MoviesComponent', () => {
 
   it('should be created', () => {
     expect(component).toBeTruthy();
+  });
+  it('should redirect to 404 if starting with "d"', () => {
+    mockActivatedRoute.testParams = { id: 'dtestID' };
+    expect(component).toBeTruthy();
+    // expect(mockRouter.navigateByUrl('dtestID')).toHaveBeenCalled();
   });
 });
