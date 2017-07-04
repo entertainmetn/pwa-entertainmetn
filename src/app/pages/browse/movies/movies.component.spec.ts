@@ -1,23 +1,21 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { Observable } from 'rxjs/Observable'
-import {Params, ActivatedRoute} from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 import { MoviesComponent } from './movies.component';
-import { Injectable } from '@angular/core';
 
 // ADDED CLASS
-@Injectable()
 export class ActivatedRouteStub {
-    private subject = new BehaviorSubject(this.testParams);
-    params = this.subject.asObservable();
+  private subject = new BehaviorSubject(this.testParams);
+  params = this.subject.asObservable();
 
-    private _testParams: {};
-    get testParams() { return this._testParams; }
-    set testParams(params: {}) {
-        this._testParams = params;
-        this.subject.next(params);
-    }
+  private _testParams: {};
+  get testParams() { return this._testParams; }
+  set testParams(params: {}) {
+    this._testParams = params;
+    this.subject.next(params);
+  }
 }
 
 describe('MoviesComponent', () => {
@@ -27,10 +25,10 @@ describe('MoviesComponent', () => {
 
   beforeEach(async(() => {
     mockActivatedRoute = new ActivatedRouteStub();
-    mockActivatedRoute.testParams = { id: Observable.of ('ddfsdfsdfzsd')};
+    mockActivatedRoute.testParams = { id: Observable.of('testID') };
     TestBed.configureTestingModule({
       providers: [
-          { provide: ActivatedRoute, useValue: mockActivatedRoute }
+        { provide: ActivatedRoute, useValue: mockActivatedRoute }
       ],
       declarations: [MoviesComponent]
     })
