@@ -5,7 +5,7 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { MoviesComponent } from './movies.component';
 
 // ADDED MOCK CLASS
-export class ActivatedRouteStub {
+export class MockActivatedRoute {
   private subject = new BehaviorSubject(this.testParams);
   params = this.subject.asObservable();
 
@@ -21,14 +21,14 @@ export class MockRouter {
 }
 
 describe('MoviesComponent', () => {
-  let mockRouter;
-  let mockActivatedRoute;
+  let mockRouter: MockRouter;
+  let mockActivatedRoute: MockActivatedRoute;
   let component: MoviesComponent;
   let fixture: ComponentFixture<MoviesComponent>;
 
   beforeEach(async(() => {
     mockRouter = new MockRouter();
-    mockActivatedRoute = new ActivatedRouteStub();
+    mockActivatedRoute = new MockActivatedRoute();
     mockActivatedRoute.testParams = { id: 'testID' };
     TestBed.configureTestingModule({
       providers: [
