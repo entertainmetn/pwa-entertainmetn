@@ -1,12 +1,11 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-// import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
-import { BrowseService } from './../browse.service';
 import { TVShowsComponent } from './tvshows.component';
 
 // ADDED MOCK CLASS
-/*export class MockActivatedRoute {
+export class MockActivatedRoute {
   private subject = new BehaviorSubject(this.testParams);
   params = this.subject.asObservable();
 
@@ -19,30 +18,23 @@ import { TVShowsComponent } from './tvshows.component';
 }
 export class MockRouter {
   public navigateByUrl(url: string): void { }
-}*/
-export class MockBrowserService {
-  private _id = 'testID';
-  set id(testID: string) { this._id = testID; }
-  public getIDfromActiveRoute(): string {
-    return this._id;
-  }
-
-  public restRoute(): void {
-    // this.sub.unsubscribe();
-  }
 }
 
 
 describe('TVShowsComponent', () => {
-  let mockBrowserService: MockBrowserService;
+  let mockRouter: MockRouter;
+  let mockActivatedRoute: MockActivatedRoute;
   let component: TVShowsComponent;
   let fixture: ComponentFixture<TVShowsComponent>;
 
   beforeEach(async(() => {
-    mockBrowserService = new MockBrowserService();
+    mockRouter = new MockRouter();
+    mockActivatedRoute = new MockActivatedRoute();
+    mockActivatedRoute.testParams = { id: 'testID' };
     TestBed.configureTestingModule({
       providers: [
-        { provide: BrowseService, useValue: mockBrowserService }
+        { provide: ActivatedRoute, useValue: mockActivatedRoute },
+        { provide: Router, useValue: mockRouter }
       ],
       declarations: [TVShowsComponent]
     })
@@ -59,7 +51,7 @@ describe('TVShowsComponent', () => {
     expect(component).toBeTruthy();
   });
   it('should redirect to 404 if starting with "d"', () => {
-    mockBrowserService.id = 'dtestID';
+    mockActivatedRoute.testParams = { id: 'dtestID' };
     expect(component).toBeTruthy();
     // expect(mockRouter.navigateByUrl('dtestID')).toHaveBeenCalled();
   });

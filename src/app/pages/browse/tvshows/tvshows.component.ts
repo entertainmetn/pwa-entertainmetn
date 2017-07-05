@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { BrowseService } from './../browse.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'xstr-tvshows',
@@ -8,17 +8,22 @@ import { BrowseService } from './../browse.service';
 })
 export class TVShowsComponent implements OnInit, OnDestroy {
 
-  id = 'default string';
+  id = 'default';
   private sub: any;
 
-  constructor(private browseService: BrowseService) { }
+  constructor(private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.id = this.browseService.getIDfromActiveRoute();
+    this.sub = this.route.params.subscribe(params => {
+      this.id = params['id']; // (+) converts string 'id' to a number :)
+
+      // In a real app: dispatch action to load the details here.
+      if (this.id.toString().startsWith('d')) { this.router.navigateByUrl('/404') }
+    });
   }
 
   ngOnDestroy() {
-    this.browseService.restRoute();
+    this.sub.unsubscribe();
   }
 
 }
