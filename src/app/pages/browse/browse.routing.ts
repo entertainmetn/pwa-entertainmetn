@@ -1,3 +1,5 @@
+import { EpisodeComponent } from './tvshows/season/episode/episode.component';
+import { SeasonComponent } from './tvshows/season/season.component';
 import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -16,7 +18,19 @@ const routes: Routes = [
   },
   {
     path: 'tv/:id',
-    component: TVShowsComponent
+    component: TVShowsComponent,
+    children: [
+      {
+        path: ':se',
+        component: SeasonComponent,
+        children: [
+          {
+            path: ':ep',
+            component: EpisodeComponent
+          }
+        ]
+      }
+    ]
   }
 ];
 
