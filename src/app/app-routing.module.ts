@@ -4,7 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { SettingsModule } from 'app/pages/settings/settings.module'
 import { ErrorPageModule } from 'app/pages/error-page/error-page.module';
-import { BrowseModule } from './pages/browse/browse.module';
+// import { BrowseModule } from './pages/browse/browse.module';
 import { HomeComponent } from 'app/pages/home/home.component';
 
 const routes: Routes = [
@@ -12,6 +12,10 @@ const routes: Routes = [
     path: '', // per moduleRoutes: 404,settings
     component: HomeComponent,
     pathMatch: 'full'
+  },
+  {
+    path: 'browse',
+    loadChildren: 'app/pages/browse/browse.module#BrowseModule' // lazyLoaded Module(with routes)
   },
   {
     path: 'stats',
@@ -29,7 +33,6 @@ const routes: Routes = [
       routes,
       { enableTracing: true } // <-- debugging purposes only
     ),
-    BrowseModule,
     SettingsModule,
     ErrorPageModule
   ],
