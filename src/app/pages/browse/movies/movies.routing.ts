@@ -2,15 +2,28 @@ import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { MoviesComponent } from './movies.component';
+import { WatchComponent } from 'app/pages/browse/movies/watch/watch.component';
+import { OverViewComponent } from 'app/pages/browse/movies/over-view/over-view.component';
+import { ReviewsComponent } from 'app/pages/browse/movies/reviews/reviews.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: MoviesComponent
-  },
-  {
-    path: 'fff',
-    component: MoviesComponent
+    component: MoviesComponent,
+    children: [
+      {
+        path: 'w',
+        component: WatchComponent
+      },
+      {
+        path: 'info',
+        component: OverViewComponent
+      },
+      {
+        path: 'reviews',
+        component: ReviewsComponent
+      }
+    ]
   }
 ];
 

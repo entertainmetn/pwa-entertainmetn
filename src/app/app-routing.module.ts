@@ -18,6 +18,10 @@ const routes: Routes = [
     loadChildren: 'app/pages/browse/browse.module#BrowseModule' // lazyLoaded Module(with routes)
   },
   {
+    path: 'mv/:id',
+    loadChildren: 'app/pages/browse/movies/movies.module#MoviesModule'
+  },
+  {
     path: 'stats',
     loadChildren: 'app/pages/stats/stats.module#StatsModule' // lazyLoaded Module(with routes)
   },
