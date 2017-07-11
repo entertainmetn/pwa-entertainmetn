@@ -7,12 +7,14 @@ import { MoviesComponent } from './movies.component';
 import { OverViewComponent } from './over-view/over-view.component';
 import { WatchComponent } from './watch/watch.component';
 import { ReviewsComponent } from './reviews/reviews.component';
+import { MoviesService } from './movies.service';
 
 @NgModule({
   imports: [
     MoviesRouting,
     CommonModule,
   ],
-  declarations: [ MoviesComponent, OverViewComponent, WatchComponent, ReviewsComponent]
+  declarations: [ MoviesComponent, OverViewComponent, WatchComponent, ReviewsComponent],
+  providers: [MoviesService]
 })
 export class MoviesModule { }
