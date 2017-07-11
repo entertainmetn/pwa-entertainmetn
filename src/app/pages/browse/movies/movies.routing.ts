@@ -16,7 +16,7 @@ const routes: Routes = [
         component: WatchComponent
       },
       {
-        path: 'info',
+        path: '',
         component: OverViewComponent
       },
       {
