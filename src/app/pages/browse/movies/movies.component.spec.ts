@@ -1,6 +1,7 @@
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { ActivatedRoute, Router } from '@angular/router';
-import { RouterTestingModule } from '@angular/router/testing';
+// import { RouterTestingModule } from '@angular/router/testing';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 import { MoviesComponent } from './movies.component';
@@ -18,6 +19,7 @@ export class MockActivatedRoute {
   }
 }
 export class MockRouter {
+  public url = '';
   public navigateByUrl(url: string): void { }
 }
 
@@ -32,12 +34,13 @@ describe('MoviesComponent', () => {
     mockActivatedRoute = new MockActivatedRoute();
     mockActivatedRoute.testParams = { id: 'testID' };
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule],
+      // imports: [RouterTestingModule],
       providers: [
         { provide: ActivatedRoute, useValue: mockActivatedRoute },
         { provide: Router, useValue: mockRouter }
       ],
-      declarations: [MoviesComponent]
+      declarations: [MoviesComponent],
+      schemas: [NO_ERRORS_SCHEMA]
     })
       .compileComponents();
   }));
