@@ -2,11 +2,11 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-    selector: 'xstr-movies',
-    templateUrl: './movies.component.html',
-    styleUrls: ['./movies.component.css']
+    selector: 'xstr-media',
+    templateUrl: './media.component.html',
+    styleUrls: ['./media.component.css']
 })
-export class MoviesComponent implements OnInit, OnDestroy {
+export class MediaComponent implements OnInit, OnDestroy {
 
     id = 'default string';
     private sub: any;

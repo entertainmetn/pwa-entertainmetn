@@ -1,15 +1,15 @@
 import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { MoviesComponent } from './movies.component';
-import { WatchComponent } from 'app/pages/browse/movies/watch/watch.component';
-import { OverViewComponent } from 'app/pages/browse/movies/over-view/over-view.component';
-import { ReviewsComponent } from 'app/pages/browse/movies/reviews/reviews.component';
+import { MediaComponent } from './media.component';
+import { WatchComponent } from 'app/pages/browse/media/watch/watch.component';
+import { OverViewComponent } from 'app/pages/browse/media/over-view/over-view.component';
+import { ReviewsComponent } from 'app/pages/browse/media/reviews/reviews.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: MoviesComponent,
+    component: MediaComponent,
     children: [
       {
         path: 'w',
@@ -27,4 +27,4 @@ const routes: Routes = [
   }
 ];
 
-export const MoviesRouting: ModuleWithProviders = RouterModule.forChild(routes);
+export const MediaRouting: ModuleWithProviders = RouterModule.forChild(routes);

@@ -19,7 +19,7 @@ const routes: Routes = [
   },
   {
     path: 'mv/:id',
-    loadChildren: 'app/pages/browse/movies/movies.module#MoviesModule'
+    loadChildren: 'app/pages/browse/media/media.module#MediaModule'
   },
   {
     path: 'stats',

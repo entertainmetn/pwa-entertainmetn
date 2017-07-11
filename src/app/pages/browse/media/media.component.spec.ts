@@ -4,7 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 // import { RouterTestingModule } from '@angular/router/testing';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
-import { MoviesComponent } from './movies.component';
+import { MediaComponent } from './media.component';
 
 // ADDED MOCK CLASS
 export class MockActivatedRoute {
@@ -23,11 +23,11 @@ export class MockRouter {
   public navigateByUrl(url: string): void { }
 }
 
-describe('MoviesComponent', () => {
+describe('MediaComponent', () => {
   let mockRouter: MockRouter;
   let mockActivatedRoute: MockActivatedRoute;
-  let component: MoviesComponent;
-  let fixture: ComponentFixture<MoviesComponent>;
+  let component: MediaComponent;
+  let fixture: ComponentFixture<MediaComponent>;
 
   beforeEach(async(() => {
     mockRouter = new MockRouter();
@@ -39,14 +39,14 @@ describe('MoviesComponent', () => {
         { provide: ActivatedRoute, useValue: mockActivatedRoute },
         { provide: Router, useValue: mockRouter }
       ],
-      declarations: [MoviesComponent],
+      declarations: [MediaComponent],
       schemas: [NO_ERRORS_SCHEMA]
     })
       .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MoviesComponent);
+    fixture = TestBed.createComponent(MediaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
