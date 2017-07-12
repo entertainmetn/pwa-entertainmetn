@@ -32,7 +32,7 @@ describe('MediaComponent', () => {
   beforeEach(async(() => {
     mockRouter = new MockRouter();
     mockActivatedRoute = new MockActivatedRoute();
-    mockActivatedRoute.testParams = { id: 'testID' };
+    mockActivatedRoute.testParams = { id: 'testID', mtype: 'testMedia' };
     TestBed.configureTestingModule({
       // imports: [RouterTestingModule],
       providers: [
@@ -55,7 +55,7 @@ describe('MediaComponent', () => {
     expect(component).toBeTruthy();
   });
   it('should redirect to 404 if starting with "d"', () => {
-    mockActivatedRoute.testParams = { id: 'dtestID' };
+    mockActivatedRoute.testParams = { id: 'dtestID', mtype: 'dtestMedia' };
     expect(component).toBeTruthy();
     // expect(mockRouter.navigateByUrl('dtestID')).toHaveBeenCalled();
   });

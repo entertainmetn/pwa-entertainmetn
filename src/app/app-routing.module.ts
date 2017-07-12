@@ -18,7 +18,7 @@ const routes: Routes = [
     loadChildren: 'app/pages/browse/browse.module#BrowseModule' // lazyLoaded Module(with routes)
   },
   {
-    path: 'mv/:id',
+    path: ':mtype/:id',
     loadChildren: 'app/pages/browse/media/media.module#MediaModule'
   },
   {
