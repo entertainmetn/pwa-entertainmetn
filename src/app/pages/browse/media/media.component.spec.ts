@@ -20,7 +20,18 @@ export class MockActivatedRoute {
 }
 export class MockRouter {
   public url = '';
+  public _routeLink: string;
   public navigateByUrl(url: string): void { }
+/*   public get routerLink(): string {
+    return this._routeLink;
+  }
+  public set routerLink(routerlink: string) {
+    this._routeLink = routerlink;
+  } */
+  public isActive(routerLink: string , expected: boolean): boolean {
+    this._routeLink = routerLink;
+    return expected;
+  }
 }
 
 describe('MediaComponent', () => {
@@ -33,6 +44,7 @@ describe('MediaComponent', () => {
     mockRouter = new MockRouter();
     mockActivatedRoute = new MockActivatedRoute();
     mockActivatedRoute.testParams = { id: 'testID', mtype: 'testMedia' };
+    // this.mockRouter.routerLink('test');
     TestBed.configureTestingModule({
       // imports: [RouterTestingModule],
       providers: [

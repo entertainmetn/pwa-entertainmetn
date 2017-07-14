@@ -12,12 +12,12 @@ const routes: Routes = [
     component: MediaComponent,
     children: [
       {
-        path: 'w',
-        component: WatchComponent
-      },
-      {
         path: '',
         component: OverViewComponent
+      },
+      {
+        path: 'w',
+        component: WatchComponent
       },
       {
         path: 'reviews',

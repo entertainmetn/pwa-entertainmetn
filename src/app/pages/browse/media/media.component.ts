@@ -12,6 +12,21 @@ export class MediaComponent implements OnInit, OnDestroy {
     id: string;
     private sub: any;
 
+    sublinks = [
+        {
+            routerlink: '.',
+            title: 'Overview'
+        },
+        {
+            routerlink: 'w',
+            title: 'Watch'
+        },
+        {
+            routerlink: 'reviews',
+            title: 'Reviews'
+        },
+    ]
+
     constructor(private router: Router, private route: ActivatedRoute) {
         this.mediaType = 'default';
         this.id = 'default';
@@ -26,6 +41,18 @@ export class MediaComponent implements OnInit, OnDestroy {
             if (this.mediaType.toString().startsWith('d')) { this.router.navigateByUrl('/404') }
             if (this.id.toString().startsWith('d')) { this.router.navigateByUrl('/404') }
         });
+    }
+
+    public isActivated(routerlink: string): boolean {
+        let linkurl = '/' + this.mediaType + '/' + this.id;
+        if (!routerlink.endsWith('.')) {
+            linkurl = linkurl + '/' + routerlink
+            // console.log(  'not equals .');
+        }
+        // console.log(linkurl);
+        // console.log(this.router.isActive(linkurl, true));
+        return this.router.isActive(linkurl, true);
+        // this.router.isActive(this.route.url, );
     }
 
     ngOnDestroy() {

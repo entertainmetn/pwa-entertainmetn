@@ -1,6 +1,7 @@
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MdTabsModule, MdButtonModule } from '@angular/material';
 
 import { MediaRouting } from './media.routing';
 import { MediaComponent } from './media.component';
@@ -13,6 +14,8 @@ import { MediaService } from './media.service';
   imports: [
     MediaRouting,
     CommonModule,
+    MdButtonModule,
+    MdTabsModule
   ],
   declarations: [ MediaComponent, OverViewComponent, WatchComponent, ReviewsComponent],
   providers: [MediaService]
