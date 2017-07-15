@@ -32,10 +32,7 @@ export class MediaService {
 
 }
 class MediaType {
-    public routeUrl: string;
-    public name: string;
-
-    constructor(routeUrl: string, name: string) {
+    constructor(public routeUrl: string, public name: string) {
         this.routeUrl = routeUrl;
         this.name = name;
     }
