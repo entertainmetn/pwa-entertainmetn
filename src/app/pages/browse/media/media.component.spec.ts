@@ -1,3 +1,4 @@
+import { MediaService } from './media.service';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -18,17 +19,16 @@ export class MockActivatedRoute {
     this.subject.next(params);
   }
 }
+export class MockMediaService {
+  public createMedia(mediaType: string, id: string): boolean {
+    return !!mediaType;
+  }
+}
 export class MockRouter {
   public url = '';
   public _routeLink: string;
   public navigateByUrl(url: string): void { }
-/*   public get routerLink(): string {
-    return this._routeLink;
-  }
-  public set routerLink(routerlink: string) {
-    this._routeLink = routerlink;
-  } */
-  public isActive(routerLink: string , expected: boolean): boolean {
+  public isActive(routerLink: string, expected: boolean): boolean {
     this._routeLink = routerLink;
     return expected;
   }
@@ -37,19 +37,23 @@ export class MockRouter {
 describe('MediaComponent', () => {
   let mockRouter: MockRouter;
   let mockActivatedRoute: MockActivatedRoute;
+  let mockMediaService: MockMediaService;
   let component: MediaComponent;
   let fixture: ComponentFixture<MediaComponent>;
 
   beforeEach(async(() => {
     mockRouter = new MockRouter();
     mockActivatedRoute = new MockActivatedRoute();
+    mockMediaService = new MockMediaService();
     mockActivatedRoute.testParams = { id: 'testID', mtype: 'testMedia' };
+    mockMediaService.createMedia('true', '');
     // this.mockRouter.routerLink('test');
     TestBed.configureTestingModule({
       // imports: [RouterTestingModule],
       providers: [
         { provide: ActivatedRoute, useValue: mockActivatedRoute },
-        { provide: Router, useValue: mockRouter }
+        { provide: Router, useValue: mockRouter },
+        { provide: MediaService, useValue: mockMediaService }
       ],
       declarations: [MediaComponent],
       schemas: [NO_ERRORS_SCHEMA]

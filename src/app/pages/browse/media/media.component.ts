@@ -1,3 +1,4 @@
+import { MediaService } from './media.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -12,51 +13,47 @@ export class MediaComponent implements OnInit, OnDestroy {
     id: string;
     private sub: any;
 
-    sublinks = [
-        {
-            routerlink: '.',
-            title: 'Overview'
-        },
-        {
-            routerlink: 'w',
-            title: 'Watch'
-        },
-        {
-            routerlink: 'reviews',
-            title: 'Reviews'
-        },
-    ]
+    sublinks: Sublink[];
 
-    constructor(private router: Router, private route: ActivatedRoute) {
+
+
+    constructor(private router: Router, private route: ActivatedRoute, private mediaService: MediaService) {
         this.mediaType = 'default';
         this.id = 'default';
+
+        this.sublinks = [
+            new Sublink('.', 'Overview'),
+            new Sublink('w', 'Watch'),
+            new Sublink('1', 'Seasons'),
+            new Sublink('reviews', 'Reviews')
+        ]
     }
 
     ngOnInit() {
         this.sub = this.route.params.subscribe(params => {
             this.mediaType = params['mtype'];
-            this.id = params['id']; // (+) converts string 'id' to a number :)
-
-            // In a real app: dispatch action to load the details here.
-            if (this.mediaType.toString().startsWith('d')) { this.router.navigateByUrl('/404') }
-            if (this.id.toString().startsWith('d')) { this.router.navigateByUrl('/404') }
+            this.id = params['id'];
+            if (!this.mediaService.createMedia(this.mediaType, this.id)) { this.router.navigateByUrl('/404') }
         });
+        // this.sublinks.push(new Sublink('w', 'dgdgdg'));
     }
 
     public isActivated(routerlink: string): boolean {
         let linkurl = '/' + this.mediaType + '/' + this.id;
         if (!routerlink.endsWith('.')) {
             linkurl = linkurl + '/' + routerlink
-            // console.log(  'not equals .');
         }
-        // console.log(linkurl);
-        // console.log(this.router.isActive(linkurl, true));
         return this.router.isActive(linkurl, true);
-        // this.router.isActive(this.route.url, );
     }
 
     ngOnDestroy() {
         this.sub.unsubscribe();
     }
 
+}
+class Sublink {
+    constructor(public routerlink: string, public title: string) {
+        this.routerlink = routerlink;
+        this.title = title;
+    }
 }

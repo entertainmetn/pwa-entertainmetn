@@ -9,6 +9,7 @@ import { OverViewComponent } from './over-view/over-view.component';
 import { WatchComponent } from './watch/watch.component';
 import { ReviewsComponent } from './reviews/reviews.component';
 import { MediaService } from './media.service';
+import { SeasonsComponent } from './seasons/seasons.component';
 
 @NgModule({
   imports: [
@@ -17,7 +18,7 @@ import { MediaService } from './media.service';
     MdButtonModule,
     MdTabsModule
   ],
-  declarations: [ MediaComponent, OverViewComponent, WatchComponent, ReviewsComponent],
+  declarations: [ MediaComponent, OverViewComponent, WatchComponent, ReviewsComponent, SeasonsComponent],
   providers: [MediaService]
 })
 export class MediaModule { }
