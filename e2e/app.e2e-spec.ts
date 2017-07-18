@@ -7,8 +7,15 @@ describe('xstr.me App', () => {
     page = new XstrMePage();
   });
 
-  it('should display welcome message', () => {
+  /* it('should display welcome message', () => {
     page.navigateTo();
     expect(page.getParagraphText()).toEqual('Welcome to xstr!!');
+  }); */
+
+  it('should display welcome message', done => {
+    page.navigateTo();
+    page.getParagraphText()
+      .then(msg => expect(msg).toEqual('Welcome to xstr!!'))
+      .then(done, done.fail);
   });
 });
