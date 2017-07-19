@@ -54,7 +54,8 @@
     "styleExt": "css",
     "component": {},
     "serve": {
-      "port": 4321
+      "port": 4321,
+      "host": "localhost"
     }
   }
 }
