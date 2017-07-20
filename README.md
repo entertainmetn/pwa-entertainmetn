@@ -1,3 +1,6 @@
+[![codecov](https://travis-ci.org/guedouari/xstr.me/branch/next/graph/badge.svg)](https://codecov.io/gh/codecov/example-typescript)
+[![Build Status](https://travis-ci.org/guedouari/xstr.me.svg?branch=next)](https://travis-ci.org/codecov/example-typescript)
+
 # Xstr.Me
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.1.3.
