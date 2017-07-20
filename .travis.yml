@@ -4,5 +4,7 @@ node_js:
 dist: trusty
 addons:
   chrome: stable
+before_install:
+  - pip install --user codecov
 after_success:
-    "bash <(curl -s https://codecov.io/gh/guedouari/xstr.me/)"
+  - codecov
