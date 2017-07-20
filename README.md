@@ -1,5 +1,5 @@
-[![codecov](https://travis-ci.org/guedouari/xstr.me/branch/next/graph/badge.svg)](https://codecov.io/gh/codecov/example-typescript)
-[![Build Status](https://travis-ci.org/guedouari/xstr.me.svg?branch=next)](https://travis-ci.org/codecov/example-typescript)
+[![codecov](https://travis-ci.org/guedouari/xstr.me/branch/next/graph/badge.svg)](https://travis-ci.org/guedouari/xstr.me)
+[![Build Status](https://travis-ci.org/guedouari/xstr.me.svg?branch=next)](https://travis-ci.org/guedouari/xstr.me)
 
 # Xstr.Me
 
