@@ -70,9 +70,17 @@ describe('MediaComponent', () => {
   it('should be created', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should be created', () => {
+    mockMediaService.createMedia('', '');
+    console.log('===================> ' + mockMediaService.createMedia('', ''));
+    expect(component).toBeTruthy();
+  });
+
   it('should redirect to 404 if starting with "d"', () => {
+    mockMediaService.createMedia('', '');
     mockActivatedRoute.testParams = { id: 'dtestID', mtype: 'dtestMedia' };
     expect(component).toBeTruthy();
-    // expect(mockRouter.navigateByUrl('dtestID')).toHaveBeenCalled();
+    // expect(mockRouter.navigateByUrl('/404')).toHaveBeenCalled();
   });
 });
