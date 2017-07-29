@@ -1,3 +1,4 @@
+import { SeasonComponent } from './season/season.component';
 import { SeasonsComponent } from './seasons/seasons.component';
 import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -26,8 +27,26 @@ const routes: Routes = [
         component: ReviewsComponent
       },
       {
-        path: ':se',
+        path: 'seasons',
         component: SeasonsComponent
+      },
+      {
+        path: ':se',
+        children: [
+          {
+            path: '',
+            component: SeasonComponent,
+            pathMatch: 'full'
+          },
+          {
+            path: 'w',
+            component: WatchComponent
+          },
+          {
+            path: 'reviews',
+            component: ReviewsComponent
+          }
+        ]
       }
     ]
   }

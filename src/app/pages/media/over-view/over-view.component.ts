@@ -1,3 +1,4 @@
+import { MediaService } from '../media.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./over-view.component.css']
 })
 export class OverViewComponent implements OnInit {
-
-  constructor() { }
+  info: string;
+  constructor(private mediaService: MediaService) {
+    this.info = 'AAAA'; // this.mediaService.activeMedia.mediaInfo;
+  }
 
   ngOnInit() {
+    this.info = this.mediaService.activeMedia.mediaInfo;
   }
 
 }
