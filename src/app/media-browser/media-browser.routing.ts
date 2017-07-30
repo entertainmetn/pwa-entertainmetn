@@ -1,3 +1,4 @@
+import { MediaIsValidGuard } from './guards/media-is-valid.guard';
 import { EpisodeComponent } from './episode/episode.component';
 import { SeasonComponent } from './season/season.component';
 import { SeasonsComponent } from './seasons/seasons.component';
@@ -13,7 +14,7 @@ const routes: Routes = [
   {
     path: '',
     component: MediaBrowserComponent,
-    // canActivateChild: MediaIsValid,
+    canActivate: [MediaIsValidGuard],
     children: [
       {
         path: '',

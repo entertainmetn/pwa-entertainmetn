@@ -1,3 +1,4 @@
+import { MediaIsValidGuard } from './guards/media-is-valid.guard';
 import { EpisodeComponent } from './episode/episode.component';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
@@ -20,7 +21,9 @@ import { SeasonComponent } from './season/season.component';
     MdButtonModule,
     MdTabsModule
   ],
-  declarations: [ MediaBrowserComponent, OverViewComponent, WatchComponent, ReviewsComponent, SeasonsComponent, SeasonComponent, EpisodeComponent],
-  providers: [MediaBrowserService]
+  declarations: [
+    MediaBrowserComponent, OverViewComponent,
+    WatchComponent, ReviewsComponent, SeasonsComponent, SeasonComponent, EpisodeComponent],
+  providers: [MediaBrowserService, MediaIsValidGuard]
 })
 export class MediaBrowserModule { }

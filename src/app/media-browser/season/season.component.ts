@@ -10,6 +10,7 @@ export class SeasonComponent implements OnInit {
   info: string;
   se: string;
   private sub: any;
+  /* istanbul ignore next */
   constructor(private route: ActivatedRoute) {
     this.info = 'Season ID = ';
   }
