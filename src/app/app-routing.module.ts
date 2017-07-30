@@ -2,10 +2,10 @@ import { browser } from 'protractor';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { SettingsModule } from 'app/pages/settings/settings.module'
-import { ErrorPageModule } from 'app/pages/error-page/error-page.module';
+import { SettingsModule } from './pages/settings/settings.module'
+import { ErrorPageModule } from './pages/error-page/error-page.module';
 // import { BrowseModule } from './pages/browse/browse.module';
-import { HomeComponent } from 'app/pages/home/home.component';
+import { HomeComponent } from './pages/home/home.component';
 
 const routes: Routes = [
   {

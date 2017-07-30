@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { OverViewComponent } from './over-view.component';
+import { MediaService } from '../media.service';
+
 
 describe('OverViewComponent', () => {
   let component: OverViewComponent;
@@ -8,6 +10,9 @@ describe('OverViewComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      providers: [
+        // { provide: MediaService, useValue: mockMediaService }
+      ],
       declarations: [ OverViewComponent ]
     })
     .compileComponents();

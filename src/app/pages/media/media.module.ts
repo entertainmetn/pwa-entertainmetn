@@ -1,3 +1,4 @@
+import { EpisodeComponent } from './episode/episode.component';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -10,6 +11,7 @@ import { WatchComponent } from './watch/watch.component';
 import { ReviewsComponent } from './reviews/reviews.component';
 import { MediaService } from './media.service';
 import { SeasonsComponent } from './seasons/seasons.component';
+import { SeasonComponent } from './season/season.component';
 
 @NgModule({
   imports: [
@@ -18,7 +20,7 @@ import { SeasonsComponent } from './seasons/seasons.component';
     MdButtonModule,
     MdTabsModule
   ],
-  declarations: [ MediaComponent, OverViewComponent, WatchComponent, ReviewsComponent, SeasonsComponent],
+  declarations: [ MediaComponent, OverViewComponent, WatchComponent, ReviewsComponent, SeasonsComponent, SeasonComponent, EpisodeComponent],
   providers: [MediaService]
 })
 export class MediaModule { }

@@ -8,9 +8,10 @@ export class MediaService {
   } */
   mediaTypes: MediaType[];
   id: number;
-
+  activeMedia: ActiveMedia;
 
   constructor() {
+    this.destroy();
   }
 
   public createMedia(mediaType: string, id: string): boolean {
@@ -22,19 +23,45 @@ export class MediaService {
     let isValid = false;
     const mType = this.mediaTypes.find(tmediaType => tmediaType.routeUrl === mediaType);
     isValid = !!(mType) && !isNaN(+id);
-    console.log('find media');
-    console.log(mType);
-    console.log(!!(mType));
-    console.log('isvalid', isValid);
+    // console.log('find media');
+    // console.log(mType);
+    // console.log(!!(mType));
+    // console.log('isvalid', isValid);
+    // if (isValid) {
+      this.activeMedia = new ActiveMedia(mType, +id);
+    // }
     return isValid;
     // return (this.mediaTypes.find(tmediaType => tmediaType.routeUrl === mediaType)) && !isNaN(+id);
   }
 
+/*   public getSeason(se: string): boolean {
+    let isValid = false;
+    // console.log('testing season ' + se + ' => ' + +se);
+    if (!isNaN(+se)) {
+      // console.log('Season found');
+      isValid = true;
+      this.activeMedia.mediaInfo += ' --- se ' + se;
+    }
+    return isValid;
+  } */
+
+  public destroy() {
+    // console.log('# Media Object destroyed');
+    this.id = null;
+    this.mediaTypes = null;
+  }
+
 }
 class MediaType {
-    constructor(public routeUrl: string, public name: string) {
-        this.routeUrl = routeUrl;
-        this.name = name;
-    }
+  constructor(public routeUrl: string, public name: string) {
+    this.routeUrl = routeUrl;
+    this.name = name;
+  }
+}
+class ActiveMedia {
+  public mediaInfo: string;
+  constructor(private mediaType: MediaType, private id: number) {
+    this.mediaInfo = mediaType.name + ' --- url = ' + mediaType.routeUrl + ' --- id = ' + this.id;
+  }
 }
 // enum MediaType { 'mv', 'tv', 'an', 'am', 'sm' }

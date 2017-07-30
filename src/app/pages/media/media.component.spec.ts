@@ -73,7 +73,7 @@ describe('MediaComponent', () => {
 
   it('should be created', () => {
     mockMediaService.createMedia('', '');
-    console.log('===================> ' + mockMediaService.createMedia('', ''));
+    // console.log('===================> ' + mockMediaService.createMedia('', ''));
     expect(component).toBeTruthy();
   });
 

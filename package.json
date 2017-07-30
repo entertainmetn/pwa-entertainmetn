@@ -1,6 +1,6 @@
 {
   "name": "xstr.me",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
@@ -26,7 +26,7 @@
     "core-js": "^2.4.1",
     "hammerjs": "^2.0.8",
     "rxjs": "^5.4.2",
-    "zone.js": "^0.8.14"
+    "zone.js": "^0.8.16"
   },
   "devDependencies": {
     "@angular/cli": "^1.2.6",
@@ -36,7 +36,7 @@
     "@types/node": "^8.0.17",
     "@types/openlayers": "^4.1.4",
     "codelyzer": "~3.1.2",
-    "jasmine-core": "~2.6.4",
+    "jasmine-core": "~2.7.0",
     "jasmine-spec-reporter": "~4.1.1",
     "karma": "~1.7.0",
     "karma-chrome-launcher": "~2.2.0",
