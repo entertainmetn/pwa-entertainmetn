@@ -23,10 +23,10 @@ export class MediaService {
     let isValid = false;
     const mType = this.mediaTypes.find(tmediaType => tmediaType.routeUrl === mediaType);
     isValid = !!(mType) && !isNaN(+id);
-    console.log('find media');
-    console.log(mType);
-    console.log(!!(mType));
-    console.log('isvalid', isValid);
+    // console.log('find media');
+    // console.log(mType);
+    // console.log(!!(mType));
+    // console.log('isvalid', isValid);
     if (isValid) { this.activeMedia = new ActiveMedia(mType, +id) }
     return isValid;
     // return (this.mediaTypes.find(tmediaType => tmediaType.routeUrl === mediaType)) && !isNaN(+id);
@@ -44,7 +44,7 @@ export class MediaService {
   }
 
   public destroy() {
-    console.log('# Media Object destroyed');
+    // console.log('# Media Object destroyed');
     this.id = null;
     this.mediaTypes = null;
   }

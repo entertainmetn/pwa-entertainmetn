@@ -13,7 +13,7 @@ export class OverViewComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.info = this.mediaService.activeMedia.mediaInfo;
+    // this.info = this.mediaService.activeMedia.mediaInfo;
   }
 
 }
