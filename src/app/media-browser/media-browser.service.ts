@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 @Injectable()
-export class MediaService {
+export class MediaBrowserService {
   /* mediaType: {
     routeUrl: string;
     name: string;

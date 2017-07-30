@@ -23,7 +23,7 @@ const routes: Routes = [
   },
   {
     path: ':mtype/:id',
-    loadChildren: 'app/pages/media/media.module#MediaModule'
+    loadChildren: 'app/media-browser/media-browser.module#MediaBrowserModule'
   },
   {
     path: 'stats',

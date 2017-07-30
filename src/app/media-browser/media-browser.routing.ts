@@ -4,7 +4,7 @@ import { SeasonsComponent } from './seasons/seasons.component';
 import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { MediaComponent } from './media.component';
+import { MediaBrowserComponent } from './media-browser.component';
 import { WatchComponent } from './watch/watch.component';
 import { OverViewComponent } from './over-view/over-view.component';
 import { ReviewsComponent } from './reviews/reviews.component';
@@ -12,7 +12,7 @@ import { ReviewsComponent } from './reviews/reviews.component';
 const routes: Routes = [
   {
     path: '',
-    component: MediaComponent,
+    component: MediaBrowserComponent,
     // canActivateChild: MediaIsValid,
     children: [
       {
@@ -72,4 +72,4 @@ const routes: Routes = [
   }
 ];
 
-export const MediaRouting: ModuleWithProviders = RouterModule.forChild(routes);
+export const MediaBrowserRouting: ModuleWithProviders = RouterModule.forChild(routes);

@@ -1,11 +1,11 @@
-import { MediaService } from './media.service';
+import { MediaBrowserService } from './media-browser.service';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { ActivatedRoute, Router } from '@angular/router';
 // import { RouterTestingModule } from '@angular/router/testing';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
-import { MediaComponent } from './media.component';
+import { MediaBrowserComponent } from './media-browser.component';
 
 // ADDED MOCK CLASS
 export class MockActivatedRoute {
@@ -19,8 +19,8 @@ export class MockActivatedRoute {
     this.subject.next(params);
   }
 }
-export class MockMediaService {
-  public createMedia(mediaType: string, id: string): boolean {
+export class MockMediaBrowserService {
+  public createMediaBrowser(mediaType: string, id: string): boolean {
     return !!mediaType;
   }
 }
@@ -34,35 +34,35 @@ export class MockRouter {
   }
 }
 
-describe('MediaComponent', () => {
+describe('MediaBrowserComponent', () => {
   let mockRouter: MockRouter;
   let mockActivatedRoute: MockActivatedRoute;
-  let mockMediaService: MockMediaService;
-  let component: MediaComponent;
-  let fixture: ComponentFixture<MediaComponent>;
+  let mockMediaBrowserService: MockMediaBrowserService;
+  let component: MediaBrowserComponent;
+  let fixture: ComponentFixture<MediaBrowserComponent>;
 
   beforeEach(async(() => {
     mockRouter = new MockRouter();
     mockActivatedRoute = new MockActivatedRoute();
-    mockMediaService = new MockMediaService();
-    mockActivatedRoute.testParams = { id: 'testID', mtype: 'testMedia' };
-    mockMediaService.createMedia('true', '');
+    mockMediaBrowserService = new MockMediaBrowserService();
+    mockActivatedRoute.testParams = { id: 'testID', mtype: 'testMediaBrowser' };
+    mockMediaBrowserService.createMediaBrowser('true', '');
     // this.mockRouter.routerLink('test');
     TestBed.configureTestingModule({
       // imports: [RouterTestingModule],
       providers: [
         { provide: ActivatedRoute, useValue: mockActivatedRoute },
         { provide: Router, useValue: mockRouter },
-        { provide: MediaService, useValue: mockMediaService }
+        { provide: MediaBrowserService, useValue: mockMediaBrowserService }
       ],
-      declarations: [MediaComponent],
+      declarations: [MediaBrowserComponent],
       schemas: [NO_ERRORS_SCHEMA]
     })
       .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MediaComponent);
+    fixture = TestBed.createComponent(MediaBrowserComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -72,14 +72,14 @@ describe('MediaComponent', () => {
   });
 
   it('should be created', () => {
-    mockMediaService.createMedia('', '');
-    // console.log('===================> ' + mockMediaService.createMedia('', ''));
+    mockMediaBrowserService.createMediaBrowser('', '');
+    // console.log('===================> ' + mockMediaBrowserService.createMediaBrowser('', ''));
     expect(component).toBeTruthy();
   });
 
   it('should redirect to 404 if starting with "d"', () => {
-    mockMediaService.createMedia('', '');
-    mockActivatedRoute.testParams = { id: 'dtestID', mtype: 'dtestMedia' };
+    mockMediaBrowserService.createMediaBrowser('', '');
+    mockActivatedRoute.testParams = { id: 'dtestID', mtype: 'dtestMediaBrowser' };
     expect(component).toBeTruthy();
     // expect(mockRouter.navigateByUrl('/404')).toHaveBeenCalled();
   });

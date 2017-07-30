@@ -1,13 +1,13 @@
-import { MediaService } from './media.service';
+import { MediaBrowserService } from './media-browser.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-    selector: 'xstr-media',
-    templateUrl: './media.component.html',
-    styleUrls: ['./media.component.css']
+    selector: 'xstr-media-browser',
+    templateUrl: './media-browser.component.html',
+    styleUrls: ['./media-browser.component.css']
 })
-export class MediaComponent implements OnInit, OnDestroy {
+export class MediaBrowserComponent implements OnInit, OnDestroy {
 
     mediaType: string;
     id: string;
@@ -22,7 +22,7 @@ export class MediaComponent implements OnInit, OnDestroy {
     /* istanbul ignore branch */
     constructor(private router: Router,
         private route: ActivatedRoute,
-        private mediaService: MediaService) {
+        private mediaBrowserService: MediaBrowserService) {
         this.mediaType = 'default';
         this.id = 'default';
         this.se = 'default';
@@ -41,7 +41,7 @@ export class MediaComponent implements OnInit, OnDestroy {
             this.id = params['id'];
             this.se = params['se'];
             // console.log('Season de => ' + this.se);
-            /* if (!this.mediaService.createMedia(this.mediaType, this.id)) {
+            /* if (!this.media-browserService.createMediaBrowser(this.media-browserType, this.id)) {
                 this.router.navigateByUrl('/404');
             } */
         });

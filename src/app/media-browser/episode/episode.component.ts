@@ -1,5 +1,4 @@
 import { Router, ActivatedRoute } from '@angular/router';
-import { MediaService } from './../media.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

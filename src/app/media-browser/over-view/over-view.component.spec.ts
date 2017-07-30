@@ -1,7 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { OverViewComponent } from './over-view.component';
-import { MediaService } from '../media.service';
 
 
 describe('OverViewComponent', () => {
