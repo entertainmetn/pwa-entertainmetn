@@ -27,12 +27,14 @@ export class MediaService {
     // console.log(mType);
     // console.log(!!(mType));
     // console.log('isvalid', isValid);
-    if (isValid) { this.activeMedia = new ActiveMedia(mType, +id) }
+    // if (isValid) {
+      this.activeMedia = new ActiveMedia(mType, +id);
+    // }
     return isValid;
     // return (this.mediaTypes.find(tmediaType => tmediaType.routeUrl === mediaType)) && !isNaN(+id);
   }
 
-  public getSeason(se: string): boolean {
+/*   public getSeason(se: string): boolean {
     let isValid = false;
     // console.log('testing season ' + se + ' => ' + +se);
     if (!isNaN(+se)) {
@@ -41,7 +43,7 @@ export class MediaService {
       this.activeMedia.mediaInfo += ' --- se ' + se;
     }
     return isValid;
-  }
+  } */
 
   public destroy() {
     // console.log('# Media Object destroyed');

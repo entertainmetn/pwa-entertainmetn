@@ -11,20 +11,15 @@ export class SeasonComponent implements OnInit {
   info: string;
   se: string;
   private sub: any;
-  constructor(/* private route: ActivatedRoute,
-    private mediaService: MediaService */) {
-    this.info = 'AAAA';
+  constructor(private route: ActivatedRoute) {
+    this.info = 'Season ID = ';
   }
 
   ngOnInit() {
-    /* this.sub = this.route.params.subscribe(params => {
+    this.sub = this.route.params.subscribe(params => {
       this.se = params['se'];
-      if (!!params['se']) {
-        console.log('jckpjkpjkljkkjjkpjkjkj,k,');
-        this.mediaService.getSeason(this.se);
-      }
-    }); */
-    this.info += 'BBBB' // this.mediaService.activeMedia.mediaInfo;
+    });
+    this.info += this.se;
   }
 
 }

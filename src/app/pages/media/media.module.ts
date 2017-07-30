@@ -1,3 +1,4 @@
+import { EpisodeComponent } from './episode/episode.component';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -19,7 +20,7 @@ import { SeasonComponent } from './season/season.component';
     MdButtonModule,
     MdTabsModule
   ],
-  declarations: [ MediaComponent, OverViewComponent, WatchComponent, ReviewsComponent, SeasonsComponent, SeasonComponent],
+  declarations: [ MediaComponent, OverViewComponent, WatchComponent, ReviewsComponent, SeasonsComponent, SeasonComponent, EpisodeComponent],
   providers: [MediaService]
 })
 export class MediaModule { }

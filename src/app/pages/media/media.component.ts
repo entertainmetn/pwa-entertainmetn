@@ -41,9 +41,9 @@ export class MediaComponent implements OnInit, OnDestroy {
             this.id = params['id'];
             this.se = params['se'];
             // console.log('Season de => ' + this.se);
-            if (!this.mediaService.createMedia(this.mediaType, this.id)) {
+            /* if (!this.mediaService.createMedia(this.mediaType, this.id)) {
                 this.router.navigateByUrl('/404');
-            }
+            } */
         });
         // this.sublinks.push(new Sublink('w', 'dgdgdg'));
     }

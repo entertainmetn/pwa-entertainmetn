@@ -1,3 +1,4 @@
+import { EpisodeComponent } from './episode/episode.component';
 import { SeasonComponent } from './season/season.component';
 import { SeasonsComponent } from './seasons/seasons.component';
 import { ModuleWithProviders } from '@angular/core';
@@ -12,6 +13,7 @@ const routes: Routes = [
   {
     path: '',
     component: MediaComponent,
+    // canActivateChild: MediaIsValid,
     children: [
       {
         path: '',
@@ -45,6 +47,24 @@ const routes: Routes = [
           {
             path: 'reviews',
             component: ReviewsComponent
+          },
+          {
+            path: ':ep',
+            children: [
+              {
+                path: '',
+                component: EpisodeComponent,
+                pathMatch: 'full'
+              },
+              {
+                path: 'w',
+                component: WatchComponent
+              },
+              {
+                path: 'reviews',
+                component: ReviewsComponent
+              }
+            ]
           }
         ]
       }

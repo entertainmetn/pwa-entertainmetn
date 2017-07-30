@@ -2,7 +2,7 @@ import { ActivatedRoute } from '@angular/router';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SeasonComponent } from './season.component';
+import { EpisodeComponent } from './episode.component';
 // import { MediaService } from '../media.service';
 
 // ADDED MOCK CLASS
@@ -26,32 +26,40 @@ export class MockMediaService {
   }
 }
  */
-describe('SeasonComponent', () => {
+describe('EpisodeComponent', () => {
   let mockActivatedRoute: MockActivatedRoute;
-  let component: SeasonComponent;
-  let fixture: ComponentFixture<SeasonComponent>;
+  /* let mockMediaService: MockMediaService; */
+  let component: EpisodeComponent;
+  let fixture: ComponentFixture<EpisodeComponent>;
 
   beforeEach(async(() => {
     mockActivatedRoute = new MockActivatedRoute();
-    mockActivatedRoute.testParams = { se: '1' };
+    // mockMediaService = new MockMediaService();
+    mockActivatedRoute.testParams = { ep: '1' };
     TestBed.configureTestingModule({
       providers: [
         { provide: ActivatedRoute, useValue: mockActivatedRoute },
+        // { provide: MediaService, useValue: mockMediaService }
       ],
-      declarations: [SeasonComponent]
+      declarations: [EpisodeComponent]
     })
       .compileComponents();
   }));
 
   beforeEach(() => {
-    mockActivatedRoute.testParams = { se: '1' };
-    fixture = TestBed.createComponent(SeasonComponent);
+    mockActivatedRoute.testParams = { ep: '1' };
+    fixture = TestBed.createComponent(EpisodeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
   it('should be created', () => {
-    mockActivatedRoute.testParams = { se: '2' };
+    mockActivatedRoute.testParams = { ep: '2' };
+    expect(component).toBeTruthy();
+  });
+
+  it('should be created', () => {
+    mockActivatedRoute.testParams = { ep: null };
     expect(component).toBeTruthy();
   });
 });
