@@ -28,22 +28,22 @@ export class MediaBrowserService {
     // console.log(!!(mType));
     // console.log('isvalid', isValid);
     // if (isValid) {
-      this.activeMedia = new ActiveMedia(mType, +id);
+    this.activeMedia = new ActiveMedia(mType, +id);
     // }
     return isValid;
     // return (this.mediaTypes.find(tmediaType => tmediaType.routeUrl === mediaType)) && !isNaN(+id);
   }
 
-/*   public getSeason(se: string): boolean {
-    let isValid = false;
-    // console.log('testing season ' + se + ' => ' + +se);
-    if (!isNaN(+se)) {
-      // console.log('Season found');
-      isValid = true;
-      this.activeMedia.mediaInfo += ' --- se ' + se;
-    }
-    return isValid;
-  } */
+  /*   public getSeason(se: string): boolean {
+      let isValid = false;
+      // console.log('testing season ' + se + ' => ' + +se);
+      if (!isNaN(+se)) {
+        // console.log('Season found');
+        isValid = true;
+        this.activeMedia.mediaInfo += ' --- se ' + se;
+      }
+      return isValid;
+    } */
 
   public destroy() {
     // console.log('# Media Object destroyed');
@@ -60,8 +60,21 @@ class MediaType {
 }
 class ActiveMedia {
   public mediaInfo: string;
+  public seasonInfo: string;
+  public episodeInfo: string;
   constructor(private mediaType: MediaType, private id: number) {
     this.mediaInfo = mediaType.name + ' --- url = ' + mediaType.routeUrl + ' --- id = ' + this.id;
   }
+  setSeasonInfo(seasonInfo: string) {
+    this.seasonInfo = seasonInfo;
+  }
+  setEpisodeInfo(episodeInfo: string) {
+    this.episodeInfo = episodeInfo;
+  }
+  getMediaInfo(): string {
+    let info = this.mediaInfo;
+    if (this.seasonInfo) { info += ' --- se = ' + this.seasonInfo }
+    if (this.episodeInfo) { info += ' --- ep = ' + this.episodeInfo }
+    return info;
+  }
 }
-// enum MediaType { 'mv', 'tv', 'an', 'am', 'sm' }

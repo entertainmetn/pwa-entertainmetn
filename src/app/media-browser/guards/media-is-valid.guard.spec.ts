@@ -27,4 +27,8 @@ describe('MediaIsValidGuard', () => {
   it('should ...', inject([MediaIsValidGuard], (guard: MediaIsValidGuard) => {
     expect(guard).toBeTruthy();
   }));
+
+  it('should ...', inject([MediaIsValidGuard], (guard: MediaIsValidGuard) => {
+    expect(guard.canActivate(null, null)).toBeFalsy();
+  }));
 });

@@ -12,4 +12,8 @@ describe('SeasonIsValidGuard', () => {
   it('should ...', inject([SeasonIsValidGuard], (guard: SeasonIsValidGuard) => {
     expect(guard).toBeTruthy();
   }));
+
+  it('should ...', inject([SeasonIsValidGuard], (guard: SeasonIsValidGuard) => {
+    expect(guard.canActivate(null, null)).toBeTruthy();
+  }));
 });

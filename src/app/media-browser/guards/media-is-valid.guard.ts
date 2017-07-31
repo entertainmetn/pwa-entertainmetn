@@ -1,14 +1,22 @@
+import { LoadRouter } from './media-is-valid.guard';
 import { Injectable } from '@angular/core';
 import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 
+export interface LoadRouter {
+  loadRouter(router: Router): boolean;
+}
+
 @Injectable()
 export class MediaIsValidGuard implements CanActivate {
+
   constructor(private router: Router) { }
   /* istanbul ignore next */
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
+
+    if (!next || !state) { return false }
     let isValid = true;
     let mtype: string;
     let id: string;
