@@ -13,6 +13,8 @@ import { ReviewsComponent } from './reviews/reviews.component';
 import { MediaBrowserService } from './media-browser.service';
 import { SeasonsComponent } from './seasons/seasons.component';
 import { SeasonComponent } from './season/season.component';
+import { SeasonIsValidGuard } from './guards/season-is-valid.guard';
+import { EpisodeIsValidGuard } from './guards/episode-is-valid.guard';
 
 @NgModule({
   imports: [
@@ -24,6 +26,6 @@ import { SeasonComponent } from './season/season.component';
   declarations: [
     MediaBrowserComponent, OverViewComponent,
     WatchComponent, ReviewsComponent, SeasonsComponent, SeasonComponent, EpisodeComponent],
-  providers: [MediaBrowserService, MediaIsValidGuard]
+  providers: [MediaBrowserService, MediaIsValidGuard, SeasonIsValidGuard, EpisodeIsValidGuard]
 })
 export class MediaBrowserModule { }
