@@ -1,3 +1,5 @@
+import { EpisodeIsValidGuard } from './guards/episode-is-valid.guard';
+import { SeasonIsValidGuard } from './guards/season-is-valid.guard';
 import { MediaIsValidGuard } from './guards/media-is-valid.guard';
 import { EpisodeComponent } from './episode/episode.component';
 import { SeasonComponent } from './season/season.component';
@@ -35,6 +37,7 @@ const routes: Routes = [
       },
       {
         path: ':se',
+        canActivate: [SeasonIsValidGuard],
         children: [
           {
             path: '',
@@ -51,6 +54,7 @@ const routes: Routes = [
           },
           {
             path: ':ep',
+            canActivate: [EpisodeIsValidGuard],
             children: [
               {
                 path: '',

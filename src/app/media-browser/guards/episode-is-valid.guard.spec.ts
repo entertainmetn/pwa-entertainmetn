@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 // import { ActivatedRouteSnapshot } from './episode-is-valid.guard.spec';
 import { ActivatedRouteSnapshot, UrlSegment } from '@angular/router';
 import { TestBed, async, inject } from '@angular/core/testing';
@@ -29,16 +30,21 @@ export class MockActivatedRouteSnapshot {
     this.params.ep = ep;
   }
 }
+export class MockRouter {
+  public navigate(url: string): void { }
+}
 
 describe('EpisodeIsValidGuard', () => {
-
+  let mockRouter: MockRouter;
   let mockActivatedRouteSnapshot: MockActivatedRouteSnapshot;
   beforeEach(() => {
+    mockRouter = new MockRouter();
     mockActivatedRouteSnapshot = new MockActivatedRouteSnapshot('2');
     TestBed.configureTestingModule({
       providers: [
         EpisodeIsValidGuard,
-        { provide: ActivatedRouteSnapshot, useValue: mockActivatedRouteSnapshot }
+        { provide: ActivatedRouteSnapshot, useValue: mockActivatedRouteSnapshot },
+        { provide: Router, useValue: mockRouter }
       ]
     });
   });
