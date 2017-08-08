@@ -1,3 +1,4 @@
+import { ActivatedRoute } from '@angular/router';
 import { Injectable } from '@angular/core';
 
 @Injectable()
@@ -11,44 +12,22 @@ export class MediaBrowserService {
   activeMedia: ActiveMedia;
 
   constructor() {
-    this.destroy();
-  }
-
-  public createMedia(mediaType: string, id: string): boolean {
     this.mediaTypes = new Array();
     this.mediaTypes.push(new MediaType('mv', 'Movies'));
     this.mediaTypes.push(new MediaType('tv', 'TV Shows'));
     this.mediaTypes.push(new MediaType('an', 'Anime'));
     this.mediaTypes.push(new MediaType('sm', 'Short Movies'));
-    let isValid = false;
-    const mType = this.mediaTypes.find(tmediaType => tmediaType.routeUrl === mediaType);
-    isValid = !!(mType) && !isNaN(+id);
-    // console.log('find media');
-    // console.log(mType);
-    // console.log(!!(mType));
-    // console.log('isvalid', isValid);
-    // if (isValid) {
-    this.activeMedia = new ActiveMedia(mType, +id);
-    // }
-    return isValid;
-    // return (this.mediaTypes.find(tmediaType => tmediaType.routeUrl === mediaType)) && !isNaN(+id);
   }
 
-  /*   public getSeason(se: string): boolean {
-      let isValid = false;
-      // console.log('testing season ' + se + ' => ' + +se);
-      if (!isNaN(+se)) {
-        // console.log('Season found');
-        isValid = true;
-        this.activeMedia.mediaInfo += ' --- se ' + se;
-      }
-      return isValid;
-    } */
-
-  public destroy() {
-    // console.log('# Media Object destroyed');
-    this.id = null;
-    this.mediaTypes = null;
+  public setActiveMedia(routeUrl: string, genreName: string, id: number) {
+    console.log('*************      new media Created');
+    this.activeMedia = new ActiveMedia(new MediaType(routeUrl, genreName), id);
+  }
+  public setSeason(id: string) {
+    this.activeMedia.setSeasonID(id);
+  }
+  public setEpisode(id: string) {
+    this.activeMedia.setEpisodeID(id);
   }
 
 }
@@ -60,21 +39,21 @@ class MediaType {
 }
 class ActiveMedia {
   public mediaInfo: string;
-  public seasonInfo: string;
-  public episodeInfo: string;
+  public seasonID: string;
+  public episodeID: string;
   constructor(private mediaType: MediaType, private id: number) {
     this.mediaInfo = mediaType.name + ' --- url = ' + mediaType.routeUrl + ' --- id = ' + this.id;
   }
-  setSeasonInfo(seasonInfo: string) {
-    this.seasonInfo = seasonInfo;
+  setSeasonID(seasonID: string) {
+    this.seasonID = seasonID;
   }
-  setEpisodeInfo(episodeInfo: string) {
-    this.episodeInfo = episodeInfo;
+  setEpisodeID(episodeID: string) {
+    this.episodeID = episodeID;
   }
   getMediaInfo(): string {
     let info = this.mediaInfo;
-    if (this.seasonInfo) { info += ' --- se = ' + this.seasonInfo }
-    if (this.episodeInfo) { info += ' --- ep = ' + this.episodeInfo }
+    if (this.seasonID) { info += ' --- se = ' + this.seasonID }
+    if (this.episodeID) { info += ' --- ep = ' + this.episodeID }
     return info;
   }
 }

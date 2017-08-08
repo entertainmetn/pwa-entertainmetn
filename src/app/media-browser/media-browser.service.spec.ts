@@ -9,10 +9,6 @@ describe('MediaBrowserService', () => {
     });
   });
 
-  it('should create media-browser', inject([MediaBrowserService], (service: MediaBrowserService) => {
-    expect(service.createMedia('tv', '11')).toBeTruthy();
-  }));
-
   it('should be created', inject([MediaBrowserService], (service: MediaBrowserService) => {
     expect(service).toBeTruthy();
   }));

@@ -1,3 +1,4 @@
+import { MediaBrowserService } from './../media-browser.service';
 import { LoadRouter } from './media-is-valid.guard';
 import { Injectable } from '@angular/core';
 import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
@@ -10,7 +11,7 @@ export interface LoadRouter {
 @Injectable()
 export class MediaIsValidGuard implements CanActivate {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private mediaBrowserService: MediaBrowserService) { }
   /* istanbul ignore next */
   canActivate(
     next: ActivatedRouteSnapshot,
@@ -28,7 +29,10 @@ export class MediaIsValidGuard implements CanActivate {
     isValid = isValid && !isNaN(+id);
     console.log(mtype);
     console.log(id);
-    if (isValid) { return true }
+    if (isValid) {
+      this.mediaBrowserService.setActiveMedia(mtype, 'Generic', +id);
+      return true;
+    }
     this.router.navigate(['/404']);
     return false;
   }

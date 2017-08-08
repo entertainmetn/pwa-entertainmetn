@@ -1,3 +1,4 @@
+import { MediaBrowserService } from './../media-browser.service';
 import { TestBed, async, inject } from '@angular/core/testing';
 
 import { MediaIsValidGuard } from './media-is-valid.guard';
@@ -13,13 +14,20 @@ export class MockRouter {
     return expected;
   }
 }
+export class MockMediaBrowserService {
+  public setActiveMedia(mtype: string, generic: string, id: number): void { }
+}
 
 describe('MediaIsValidGuard', () => {
+  let mockMediaBrowserService: MockMediaBrowserService;
   let mockRouter: MockRouter;
   beforeEach(() => {
+    mockMediaBrowserService = new MockMediaBrowserService();
     mockRouter = new MockRouter();
     TestBed.configureTestingModule({
-      providers: [MediaIsValidGuard,
+      providers: [
+        MediaIsValidGuard,
+        { provide: MediaBrowserService, useValue: mockMediaBrowserService },
         { provide: Router, useValue: mockRouter }]
     });
   });

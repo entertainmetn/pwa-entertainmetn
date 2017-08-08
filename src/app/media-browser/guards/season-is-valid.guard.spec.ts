@@ -1,3 +1,4 @@
+import { MediaBrowserService } from './../media-browser.service';
 import { ActivatedRouteSnapshot, Router, UrlSegment } from '@angular/router';
 import { TestBed, async, inject } from '@angular/core/testing';
 
@@ -31,17 +32,32 @@ export class MockActivatedRouteSnapshot {
 export class MockRouter {
   public navigate(url: string): void { }
 }
+export class MockMediaBrowserService {
+  activeMedia;
+  constructor() {
+    this.activeMedia = new MockActiveMedia();
+  }
+  public setSeason(url: string): void { }
+}
+class MockActiveMedia {
+  public getMediaInfo(): string {
+    return 'default';
+  }
+}
 
 
 describe('SeasonIsValidGuard', () => {
   let mockRouter: MockRouter;
+  let mockMediaBrowserService: MockMediaBrowserService;
   let mockActivatedRouteSnapshot: MockActivatedRouteSnapshot;
   beforeEach(() => {
     mockRouter = new MockRouter();
+    mockMediaBrowserService = new MockMediaBrowserService();
     mockActivatedRouteSnapshot = new MockActivatedRouteSnapshot('2');
     TestBed.configureTestingModule({
       providers: [
         SeasonIsValidGuard,
+        { provide: MediaBrowserService, useValue: mockMediaBrowserService },
         { provide: ActivatedRouteSnapshot, useValue: mockActivatedRouteSnapshot },
         { provide: Router, useValue: mockRouter }
       ]
