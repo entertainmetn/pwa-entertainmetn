@@ -11,6 +11,7 @@ script:
   - npm run build
 after_success:
   - codecov
+  - cp $TRAVIS_BUILD_DIR/dist/index.html $TRAVIS_BUILD_DIR/dist/404.html
 deploy:
   local_dir: dist
   provider: pages
