@@ -14,8 +14,13 @@ after_success:
   - cp $TRAVIS_BUILD_DIR/dist/index.html $TRAVIS_BUILD_DIR/dist/404.html
 deploy:
   local_dir: dist
-  provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
-  on:
-    branch: next
+  - provider: pages
+    skip_cleanup: true
+    github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
+    on:
+      branch: next
+  - provider: script
+    script: curl --ftp-create-dirs -T uploadfilename -u $FTP_USER:$FTP_PASSWORD $FTP_SERVER
+    on:
+      branch: next
+      
