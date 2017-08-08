@@ -21,6 +21,6 @@ deploy:
       branch: next
   - provider: script
     skip_cleanup: true
-    script: curl --ftp-create-dirs -T www -u $FTP_USER:$FTP_PASSWORD $FTP_SERVER
+    script: curl --ftp-create-dirs -T www/* -u $FTP_USER:$FTP_PASSWORD $FTP_SERVER
     on:
       branch: next
