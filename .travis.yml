@@ -11,17 +11,16 @@ script:
   - npm run build
 after_success:
   - codecov
-  - cp $TRAVIS_BUILD_DIR/dist/index.html $TRAVIS_BUILD_DIR/dist/404.html
+  - cp $TRAVIS_BUILD_DIR/www/index.html $TRAVIS_BUILD_DIR/www/404.html
 deploy:
   - provider: pages
-    local_dir: dist
+    local_dir: www
     skip_cleanup: true
     github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
     on:
       branch: next
   - provider: script
-    local_dir: dist
     skip_cleanup: true
-    script: curl --ftp-create-dirs -T uploadfilename -u $FTP_USER:$FTP_PASSWORD $FTP_SERVER
+    script: curl --ftp-create-dirs -T www -u $FTP_USER:$FTP_PASSWORD $FTP_SERVER
     on:
       branch: next
