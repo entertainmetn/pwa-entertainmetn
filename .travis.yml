@@ -24,6 +24,6 @@ deploy:
       branch: next
   - provider: script
     skip_cleanup: true
-    script: lftp -u $FTP_USER,$FTP_PASSWORD $FTP_SERVER  -e "rm -r www; exit"
+    script: scripts/deploy-prod.sh
     on:
       branch: next
