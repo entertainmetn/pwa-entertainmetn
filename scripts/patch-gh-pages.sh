@@ -5,7 +5,7 @@ abort() {
     exit -1
 }
 [ -z $TRAVIS_BRANCH ] && abort "branch is undefined"
-if [ "$TRAVIS_BRANCH" == "next" ]
+if [ "$TRAVIS_BRANCH" = "next" ]
 then
 	cp "$TRAVIS_BUILD_DIR/www/index.html" "$TRAVIS_BUILD_DIR/www/404.html"
 	echo "created 404.html for gh-pages"
