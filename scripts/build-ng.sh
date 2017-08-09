@@ -4,13 +4,11 @@ abort() {
     echo $message
     exit -1
 }
-args= ""
 [ -z $TRAVIS_BRANCH ] && abort "branch is undefined"
 if [ "$TRAVIS_BRANCH" = "next" ]
 then
-	args= "--bh /xstr.me/"
 	echo "building for gh-pages"
+    npm run build:dev
 else
-	echo "nothing to do ..."
+	npm run build
 fi
-ng build --prod $args

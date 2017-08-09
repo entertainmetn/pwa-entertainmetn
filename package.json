@@ -5,7 +5,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --prod --bh /xstr.me/",
+    "build": "ng build --prod",
+    "build:dev": "ng build --prod --bh /xstr.me/",
     "test": "ng test -cc --config karma.ci.conf.js",
     "lint": "ng lint",
     "e2e": "ng e2e"
