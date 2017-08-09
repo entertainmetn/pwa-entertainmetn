@@ -3,6 +3,9 @@ node_js:
   - "8"
 dist: trusty
 addons:
+  apt:
+    packages:
+    - lftp
   chrome: stable
 before_install:
   - pip install --user codecov
@@ -21,6 +24,6 @@ deploy:
       branch: next
   - provider: script
     skip_cleanup: true
-    script: curl --ftp-create-dirs -T www/* -u $FTP_USER:$FTP_PASSWORD $FTP_SERVER
+    script: lftp -u $FTP_USER,$FTP_PASSWORD $FTP_SERVER  -e "rm -r www; exit"
     on:
       branch: next
