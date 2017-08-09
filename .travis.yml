@@ -24,6 +24,6 @@ deploy:
       branch: next
   - provider: script
     skip_cleanup: true
-    script: scripts/deploy-prod.sh
+    script: sh scripts/deploy-prod.sh
     on:
       branch: next
