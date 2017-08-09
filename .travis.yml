@@ -11,7 +11,7 @@ before_install:
   - pip install --user codecov
 script:
   - npm test
-  - npm run build
+  - sh scripts/build-ng.sh
 after_success:
   - codecov
   - sh scripts/patch-gh-pages.sh
