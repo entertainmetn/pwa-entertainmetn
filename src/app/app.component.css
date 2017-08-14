@@ -12,10 +12,13 @@ nav>ul>li {
 
 
 .example-sidenav {
-    padding: 20px;
+    padding-top: 120px;
     width: 125px;
 }
+md-toolbar {
+    position: absolute;
+    z-index: 999;
+}
 .example-container {
-    height: calc(100% - 64px);
-    width: 100%;
+    padding-top: 100px;
 }
