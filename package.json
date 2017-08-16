@@ -1,6 +1,6 @@
 {
   "name": "xstr.me",
-  "version": "0.0.4-beta",
+  "version": "0.0.4",
   "license": "MIT",
   "scripts": {
     "ng": "ng",

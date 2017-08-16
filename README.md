@@ -1,8 +1,8 @@
 
 
-|0.0.3|[![Build Status](https://travis-ci.org/guedouari/xstr.me.svg?branch=master)](https://travis-ci.org/guedouari/xstr.me)|[![codecov](https://codecov.io/gh/guedouari/xstr.me/branch/master/graph/badge.svg)](https://codecov.io/gh/guedouari/xstr.me)|[xstr.me](https://xstr.me)|
+|0.0.4|[![Build Status](https://travis-ci.org/guedouari/xstr.me.svg?branch=master)](https://travis-ci.org/guedouari/xstr.me)|[![codecov](https://codecov.io/gh/guedouari/xstr.me/branch/master/graph/badge.svg)](https://codecov.io/gh/guedouari/xstr.me)|[xstr.me](https://xstr.me)|
 |---|---|---|---|
-|0.0.4-beta|[![Build Status](https://travis-ci.org/guedouari/xstr.me.svg?branch=next)](https://travis-ci.org/guedouari/xstr.me)|[![codecov](https://codecov.io/gh/guedouari/xstr.me/branch/next/graph/badge.svg)](https://codecov.io/gh/guedouari/xstr.me/branch/next)|[gh-pages](https://guedouari.github.io/xstr.me)|
+|0.0.5-beta|[![Build Status](https://travis-ci.org/guedouari/xstr.me.svg?branch=next)](https://travis-ci.org/guedouari/xstr.me)|[![codecov](https://codecov.io/gh/guedouari/xstr.me/branch/next/graph/badge.svg)](https://codecov.io/gh/guedouari/xstr.me/branch/next)|[gh-pages](https://guedouari.github.io/xstr.me)|
 
 
 
