@@ -35,4 +35,14 @@ describe('AppComponent', () => {
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('h1').textContent).toContain('Welcome to xstr!!');
   });
+
+  it('should resize', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.debugElement.componentInstance;
+    app.onResize({target: {
+      innerWidth: 124,
+      innerHeight: 124
+    }});
+    expect(app).toBeTruthy();
+  });
 });

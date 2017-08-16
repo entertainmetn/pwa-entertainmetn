@@ -1,5 +1,6 @@
+import { MdSidenavModule, MdSidenav } from '@angular/material';
 import { Observable } from 'rxjs/Observable';
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'xstr-root',
@@ -7,10 +8,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  @ViewChild('demosidenav') public myNav: MdSidenav;
   title = 'xstr';
   pixelWidth: number;
   pixelHeight: number;
   sideNavOpened = true;
+  sideNavMode = 'side';
+  sideNavPos = 'start'
 
   constructor() {
     this.pixelWidth = document.defaultView.innerWidth;
@@ -29,10 +33,17 @@ export class AppComponent {
     this.sideNavDynamic();
   }
   sideNavDynamic() {
+    console.log('side nav called ********************');
     if (this.pixelWidth > 600) {
       this.sideNavOpened = true;
+      this.sideNavMode = 'side';
+      this.sideNavPos = 'start';
     } else {
+      /* istanbul ignore next */
+      if (this.myNav) { this.myNav.close(); }
       this.sideNavOpened = false;
+      this.sideNavMode = 'over';
+      this.sideNavPos = 'end';
     }
   }
 }

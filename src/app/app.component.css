@@ -22,3 +22,10 @@ md-toolbar {
 .example-container {
     padding-top: 100px;
 }
+.botNav {
+    position: fixed;
+    bottom: 0;
+}
+.botNavCell {
+    width: 20%;
+}
