@@ -23,8 +23,12 @@ md-toolbar {
     padding-top: 100px;
 }
 .botNav {
-    position: fixed;
+    position: sticky;
     bottom: 0;
+}
+.topNav {
+    position: sticky;
+    top: 0;
 }
 .botNavCell {
     width: 20%;
