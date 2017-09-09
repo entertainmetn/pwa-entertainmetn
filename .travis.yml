@@ -6,6 +6,8 @@ addons:
   sonarcloud:
     organization: $sonarcloud_organization_key
     token: $sonarcloud_token
+    projectkey: client.xstr.me
+    sources: "."
   apt:
     packages:
     - lftp
