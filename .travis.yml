@@ -14,10 +14,10 @@ before_install:
   - pip install --user codecov
 script:
   - npm test
+  - sonar-scanner
   - sh scripts/build-ng.sh
 after_success:
   - codecov
-  - sonar-scanner
   - sh scripts/patch-gh-pages.sh
 deploy:
   - provider: pages
