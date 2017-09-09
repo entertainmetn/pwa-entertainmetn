@@ -1,6 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import {MdButtonModule, MdCheckboxModule, MdSidenavModule, MdToolbarModule} from '@angular/material';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { MdButtonModule, MdCheckboxModule, MdSidenavModule, MdToolbarModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 
@@ -9,7 +10,8 @@ describe('AppComponent', () => {
     TestBed.configureTestingModule({
       imports: [
         RouterTestingModule,
-        MdButtonModule, MdCheckboxModule, MdSidenavModule, MdToolbarModule
+        MdButtonModule, MdCheckboxModule, MdSidenavModule, MdToolbarModule,
+        NoopAnimationsModule
       ],
       declarations: [
         AppComponent
@@ -39,10 +41,12 @@ describe('AppComponent', () => {
   it('should resize', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    app.onResize({target: {
-      innerWidth: 124,
-      innerHeight: 124
-    }});
+    app.onResize({
+      target: {
+        innerWidth: 124,
+        innerHeight: 124
+      }
+    });
     expect(app).toBeTruthy();
   });
 });

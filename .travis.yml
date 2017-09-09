@@ -3,6 +3,11 @@ node_js:
   - "8"
 dist: trusty
 addons:
+  sonarcloud:
+    organization: $sonarcloud_organization_key
+    token: $sonarcloud_token
+    projectkey: client.xstr.me
+    sources: "."
   apt:
     packages:
     - lftp
@@ -11,6 +16,7 @@ before_install:
   - pip install --user codecov
 script:
   - npm test
+  - sonar-scanner
   - sh scripts/build-ng.sh
 after_success:
   - codecov
