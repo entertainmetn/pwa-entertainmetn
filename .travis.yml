@@ -19,7 +19,7 @@ script:
 after_success:
   - codecov
   - sh scripts/patch-gh-pages.sh
-before_deploy: "tar -cvf www/client.xstr.me.tar.gz www"
+before_deploy: "sh scripts/package-www.sh"
 deploy:
   - provider: pages
     local_dir: www
