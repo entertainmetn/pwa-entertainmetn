@@ -19,7 +19,7 @@ script:
 after_success:
   - codecov
   - sh scripts/patch-gh-pages.sh
-before_deploy: "sh scripts/package-www.sh"
+before_deploy: "tar -cvf www/client.xstr.me-$TRAVIS_BRANCH.tar.gz www"
 deploy:
   - provider: pages
     local_dir: www
