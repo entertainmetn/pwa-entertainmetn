@@ -2,7 +2,7 @@
 abort() {
     local message=$1
     echo $message
-    exit -1
+    exit 0
 }
 [ -z $TRAVIS_TAG ] && abort "tag undefined"
 echo "creating archive for ""$TRAVIS_TAG"
