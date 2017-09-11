@@ -33,7 +33,8 @@ deploy:
       branch: master
   - provider: releases
     api_key: $GITHUB_TOKEN
-    local_dir: www
+    file_glob: true
+    file: www/*.html
     skip_cleanup: true
     on:
       tags: true
