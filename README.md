@@ -1,11 +1,8 @@
+[xstr.me](https://xstr.me) : [![Build Status](https://travis-ci.org/guedouari/xstr.me.svg?branch=master)](https://travis-ci.org/guedouari/xstr.me) [![codecov](https://codecov.io/gh/guedouari/xstr.me/branch/master/graph/badge.svg)](https://codecov.io/gh/guedouari/xstr.me)
 
-
-|0.0.4|[![Build Status](https://travis-ci.org/guedouari/xstr.me.svg?branch=master)](https://travis-ci.org/guedouari/xstr.me)|[![codecov](https://codecov.io/gh/guedouari/xstr.me/branch/master/graph/badge.svg)](https://codecov.io/gh/guedouari/xstr.me)|[xstr.me](https://xstr.me)|
-|---|---|---|---|
-|0.0.5-beta|[![Build Status](https://travis-ci.org/guedouari/xstr.me.svg?branch=next)](https://travis-ci.org/guedouari/xstr.me)|[![codecov](https://codecov.io/gh/guedouari/xstr.me/branch/next/graph/badge.svg)](https://codecov.io/gh/guedouari/xstr.me/branch/next)|[gh-pages](https://guedouari.github.io/xstr.me)|
+[next.xstr.me](https://guedouari.github.io/xstr.me) : [![Build Status](https://travis-ci.org/guedouari/xstr.me.svg?branch=next)](https://travis-ci.org/guedouari/xstr.me) [![codecov](https://codecov.io/gh/guedouari/xstr.me/branch/next/graph/badge.svg)](https://codecov.io/gh/guedouari/xstr.me/branch/next)
 
 Sonar:
-
 [![Quality Gate](https://sonarcloud.io/api/badges/gate?key=client.xstr.me)](https://sonarcloud.io/dashboard?id=client.xstr.me) [![Technical debt ratio](https://sonarcloud.io/api/badges/measure?key=client.xstr.me&metric=sqale_debt_ratio)](https://sonarcloud.io/dashboard?id=client.xstr.me) [![vulnerabilities](https://sonarcloud.io/api/badges/measure?key=client.xstr.me&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=client.xstr.me) [![code_smells](https://sonarcloud.io/api/badges/measure?key=client.xstr.me&metric=code_smells)](https://sonarcloud.io/dashboard?id=client.xstr.me) [![bugs](https://sonarcloud.io/api/badges/measure?key=client.xstr.me&metric=bugs)](https://sonarcloud.io/dashboard?id=client.xstr.me)
 
 # Xstr.Me

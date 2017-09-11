@@ -1,6 +1,6 @@
 {
   "name": "xstr.me",
-  "version": "0.0.5-beta",
+  "version": "0.0.5",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
@@ -37,7 +37,7 @@
     "@types/jasmine": "2.5.54",
     "@types/node": "^8.0.28",
     "@types/openlayers": "^4.3.1",
-    "codelyzer": "~3.1.2",
+    "codelyzer": "~3.2.0",
     "jasmine-core": "~2.8.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~1.7.1",

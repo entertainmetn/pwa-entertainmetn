@@ -31,3 +31,9 @@ deploy:
     script: sh scripts/deploy-prod.sh
     on:
       branch: master
+  - provider: releases
+      api_key: $GITHUB_TOKEN
+      file: *.js
+      skip_cleanup: true
+      on:
+        tags: true
