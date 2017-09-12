@@ -36,7 +36,7 @@ deploy:
   - provider: releases
     api_key: $GITHUB_TOKEN
     file_glob: true
-    file: www/*.tar.gz
+    file: client.xstr.me-*.tar.gz
     skip_cleanup: true
     on:
       tags: true
