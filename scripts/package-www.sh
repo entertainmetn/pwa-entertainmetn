@@ -4,6 +4,6 @@ abort() {
     echo $message
     exit 0
 }
-[ -z $TRAVIS_TAG ] && abort "tag undefined"
+[ -z $TRAVIS_TAG ] && abort "tag-undefined"
 echo "creating archive for ""$TRAVIS_TAG"
-tar -cvf ./www/client.xstr.me-"$TRAVIS_TAG".tar.gz ./www
+tar -cvf "www/client.xstr.me-"$TRAVIS_TAG".tar.gz" www
