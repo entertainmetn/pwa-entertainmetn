@@ -10,6 +10,9 @@ addons:
     packages:
     - lftp
   chrome: stable
+cache:
+  directories:
+     - ./node_modules
 before_install:
   - pip install --user codecov
 script:
