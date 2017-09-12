@@ -15,7 +15,7 @@ then
 	echo "building beta for gh-pages"
     npm run build:next
 fi
-if [ "$TRAVIS_BRANCH" = "TRAVIS_TAG" ]
+if [ "$TRAVIS_BRANCH" = "$TRAVIS_TAG" ]
 then
 	echo "building a distributable release"
     npm run build:release

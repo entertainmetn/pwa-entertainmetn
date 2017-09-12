@@ -15,11 +15,12 @@ before_install:
 script:
   - npm test
   - sonar-scanner
-  - sh scripts/build-ng.sh
 after_success:
+  - sh scripts/build-ng.sh
   - codecov
+before_deploy:
   - sh scripts/patch-gh-pages.sh
-before_deploy: "sh scripts/package-www.sh"
+  - sh scripts/package-www.sh
 deploy:
   - provider: pages
     local_dir: www
