@@ -1,10 +1,15 @@
 #!/bin/bash
 
 git clone --depth 1 https://github.com/guedouari/desktop.xstr.me.git
-
-cp client.xstr.me-$TRAVIS_TAG.tar.gz desktop.xstr.me/www.tar.gz
-
 cd desktop.xstr.me/
+git remote rm origin
+git remote add origin https://travis-ci:${GITHUB_TOKEN}@github.com/scuzzlebuzzle/ol3-1.git
+
+
+
+cp ../client.xstr.me-$TRAVIS_TAG.tar.gz www.tar.gz
+
+
 
 git add www.tar.gz
 
