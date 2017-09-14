@@ -3,7 +3,7 @@
 git clone --depth 1 https://github.com/guedouari/desktop.xstr.me.git
 cd desktop.xstr.me/
 git remote rm origin
-git remote add origin https://travis-ci:${GITHUB_TOKEN}@github.com/scuzzlebuzzle/ol3-1.git
+git remote add origin https://travis-ci:${GITHUB_TOKEN}@github.com/guedouari/desktop.xstr.me.git
 
 
 
