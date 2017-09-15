@@ -48,3 +48,8 @@ deploy:
     skip_cleanup: true
     on:
       tags: true
+  - provider: script    
+    script: sh scripts/deploy-mobile.sh
+    skip_cleanup: true
+    on:
+      tags: true
