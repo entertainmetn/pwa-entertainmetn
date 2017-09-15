@@ -1,6 +1,6 @@
 {
   "name": "xstr.me",
-  "version": "0.0.5",
+  "version": "0.0.8",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
@@ -32,12 +32,12 @@
     "zone.js": "^0.8.17"
   },
   "devDependencies": {
-    "@angular/cli": "^1.4.1",
+    "@angular/cli": "^1.4.2",
     "@angular/compiler-cli": "^4.4.0-RC.0",
     "@angular/language-service": "^4.4.0-RC.0",
-    "@types/jasmine": "2.5.54",
+    "@types/jasmine": "2.6.0",
     "@types/node": "^8.0.28",
-    "@types/openlayers": "^4.3.1",
+    "@types/openlayers": "^4.3.2",
     "codelyzer": "~3.2.0",
     "jasmine-core": "~2.8.0",
     "jasmine-spec-reporter": "~4.2.1",
