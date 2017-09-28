@@ -33,7 +33,7 @@ export class MediaIsValidGuard implements CanActivate {
       this.mediaBrowserService.setActiveMedia(mtype, 'Generic', +id);
       return true;
     }
-    this.router.navigate(['/404']);
+    this.router.navigate(['/pages/404']);
     return false;
   }
 }

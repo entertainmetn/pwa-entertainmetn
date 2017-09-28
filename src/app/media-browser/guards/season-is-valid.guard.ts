@@ -12,7 +12,7 @@ export class SeasonIsValidGuard implements CanActivate {
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
     if (isNaN(+next.params.se)) {
-      this.router.navigate(['/404']);
+      this.router.navigate(['/pages/404']);
       return false
     }
     this.mediaBrowserService.setSeason(next.params.se);

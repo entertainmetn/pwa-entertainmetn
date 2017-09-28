@@ -17,23 +17,38 @@ const routes: Routes = [
     path: '',
     component: MediaBrowserComponent,
     canActivate: [MediaIsValidGuard],
+    data: {
+      title: 'Media'
+    },
     children: [
       {
         path: '',
         component: OverViewComponent,
-        pathMatch: 'full'
+        pathMatch: 'full',
+        data: {
+          title: 'OverView'
+        },
       },
       {
         path: 'w',
-        component: WatchComponent
+        component: WatchComponent,
+        data: {
+          title: 'Watch'
+        },
       },
       {
         path: 'reviews',
-        component: ReviewsComponent
+        component: ReviewsComponent,
+        data: {
+          title: 'Reviews'
+        },
       },
       {
         path: 'seasons',
-        component: SeasonsComponent
+        component: SeasonsComponent,
+        data: {
+          title: 'Seasons'
+        },
       },
       {
         path: ':se',
