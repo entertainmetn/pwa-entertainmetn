@@ -9,6 +9,7 @@
       "outDir": "www",
       "assets": [
         "assets",
+        "img",
         "favicon.ico",
         ".htaccess"
       ],

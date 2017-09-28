@@ -6,12 +6,13 @@ cd desktop.xstr.me/
 # git remote add origin https://travis-ci:${GITHUB_TOKEN}@github.com/guedouari/desktop.xstr.me.git
 
 
+rm -rf www
 
-cp ../client.xstr.me-$TRAVIS_TAG.tar.gz www.tar.gz
+cp -r ../www www
 
 
 
-git add www.tar.gz
+git add www/*
 
 git commit -m "update package from xstr.me via script "$TRAVIS_TAG
 
