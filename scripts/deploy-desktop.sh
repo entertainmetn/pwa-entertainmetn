@@ -12,7 +12,7 @@ cp -r ../www www
 
 
 
-git add www/*
+git add -f www/*
 
 git commit -m "update package from xstr.me via script "$TRAVIS_TAG
 
