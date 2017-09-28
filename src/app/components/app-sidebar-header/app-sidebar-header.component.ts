@@ -8,10 +8,10 @@ export class AppSidebarHeader {
 
   constructor(private el: ElementRef) { }
 
-  //wait for the component to render completely
+  // wait for the component to render completely
   ngOnInit(): void {
     var nativeElement: HTMLElement = this.el.nativeElement,
-    parentElement: HTMLElement = nativeElement.parentElement;
+      parentElement: HTMLElement = nativeElement.parentElement;
     // move all children out of the element
     while (nativeElement.firstChild) {
       parentElement.insertBefore(nativeElement.firstChild, nativeElement);
