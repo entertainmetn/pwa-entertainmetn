@@ -6,20 +6,20 @@
   }
 }
 
-// app-dashboard and app-root are Angular2+ selectors. You can add here your own selectors if you need.
+// xstr-dashboard and app-root are Angular2+ selectors. You can add here your own selectors if you need.
 .app,
-app-dashboard,
+xstr-dashboard,
 app-root {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
 }
 
-.app-header {
+.xstr-header {
   flex: 0 0 $navbar-height;
 }
 
-.app-footer {
+.xstr-footer {
   flex: 0 0 $footer-height;
 }
 
@@ -51,7 +51,7 @@ app-root {
 // header
 //
 .header-fixed {
-  .app-header {
+  .xstr-header {
     position: fixed;
     z-index: $zindex-sticky;
     width: 100%;
@@ -83,12 +83,12 @@ app-root {
     // }
   }
 
-  .main, .app-footer {
+  .main, .xstr-footer {
     margin-left: $sidebar-width;
   }
 
   &.sidebar-hidden {
-    .main, .app-footer {
+    .main, .xstr-footer {
       margin-left: 0;
     }
   }
@@ -115,7 +115,7 @@ app-root {
     }
 
     &.sidebar-fixed {
-      .main, .app-footer {
+      .main, .xstr-footer {
         margin-left: $sidebar-compact-width;
       }
 
@@ -124,7 +124,7 @@ app-root {
       }
 
       &.sidebar-hidden {
-        .main, .app-footer {
+        .main, .xstr-footer {
           margin-left: 0;
         }
       }
@@ -148,7 +148,7 @@ app-root {
     }
 
     &.sidebar-fixed {
-      .main, .app-footer {
+      .main, .xstr-footer {
         margin-left: $sidebar-minimized-width;
       }
 
@@ -157,7 +157,7 @@ app-root {
       }
 
       &.sidebar-hidden {
-        .main, .app-footer {
+        .main, .xstr-footer {
           margin-left: 0;
         }
       }
@@ -185,12 +185,12 @@ app-root {
     }
   }
 
-  .main, .app-footer {
+  .main, .xstr-footer {
     margin-right: $aside-menu-width;
   }
 
   &.aside-menu-hidden {
-    .main, .app-footer {
+    .main, .xstr-footer {
       margin-right: 0;
     }
   }
@@ -272,7 +272,7 @@ app-root {
 // Footer
 //
 .footer-fixed {
-  .app-footer {
+  .xstr-footer {
     position: fixed;
     bottom: 0;
     z-index: $zindex-sticky;
@@ -287,8 +287,8 @@ app-root {
 //
 // Animations
 //
-.app-header,
-.app-footer,
+.xstr-header,
+.xstr-footer,
 .sidebar,
 .main,
 .aside-menu {
@@ -306,7 +306,7 @@ app-root {
 //
 
 @include media-breakpoint-down(md) {
-  .app-header.navbar {
+  .xstr-header.navbar {
     position: fixed !important;
     z-index: $zindex-sticky;
     width: 100%;
@@ -346,7 +346,7 @@ app-root {
     }
   }
 
-  .main, .app-footer {
+  .main, .xstr-footer {
     margin-left: 0 !important;
   }
 

@@ -1,17 +1,17 @@
-<app-header></app-header>
+<xstr-header></xstr-header>
 <div class="app-body">
-  <app-sidebar></app-sidebar>
+  <xstr-sidebar></xstr-sidebar>
   <!-- Main content -->
   <main class="main">
     <!-- Breadcrumb -->
     <ol class="breadcrumb">
-      <app-breadcrumbs></app-breadcrumbs>
+      <xstr-breadcrumbs></xstr-breadcrumbs>
       <!-- Breadcrumb Menu-->
       <li class="breadcrumb-menu d-md-down-none">
         <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-          <a class="btn" href="#"><em class="icon-speech"></em></a>
+          <a class="btn" [routerLink]="['/']"><em class="icon-speech"></em></a>
           <a class="btn" [routerLink]="['/dashboard']"><em class="icon-graph"></em> &nbsp;Dashboard</a>
-          <a class="btn" href="#"><em class="icon-settings"></em> &nbsp;Settings</a>
+          <a class="btn" [routerLink]="['/']"><em class="icon-settings"></em> &nbsp;Settings</a>
         </div>
       </li>
     </ol>
@@ -19,6 +19,6 @@
       <router-outlet></router-outlet>
     </div><!-- /.conainer-fluid -->
   </main>
-  <app-aside></app-aside>
+  <xstr-aside></xstr-aside>
 </div>
-<app-footer></app-footer>
+<xstr-footer></xstr-footer>

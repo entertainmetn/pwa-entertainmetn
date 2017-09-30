@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-dashboard',
+  selector: 'xstr-dashboard',
   templateUrl: './full-layout.component.html'
 })
-export class FullLayout implements OnInit {
+export class FullLayoutComponent implements OnInit {
 
   // public disabled = false;
   // public status: {isopen: boolean} = {isopen: false};

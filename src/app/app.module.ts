@@ -6,36 +6,36 @@ import {MdButtonModule, MdCheckboxModule, MdSidenavModule, MdToolbarModule} from
 
 // Import containers
 import {
-  FullLayout,
-  SimpleLayout
+  FullLayoutComponent,
+  SimpleLayoutComponent
 } from './containers';
 
 const APP_CONTAINERS = [
-  FullLayout,
-  SimpleLayout
+  FullLayoutComponent,
+  SimpleLayoutComponent
 ]
 
 // Import components
 import {
-  AppAside,
-  AppBreadcrumbs,
-  AppFooter,
-  AppHeader,
-  AppSidebar,
-  AppSidebarFooter,
-  AppSidebarForm,
-  AppSidebarHeader
+  XstrAsideComponent,
+  XstrBreadcrumbsComponent,
+  XstrFooterComponent,
+  XstrHeaderComponent,
+  XstrSidebarComponent,
+  XstrSidebarFooterComponent,
+  XstrSidebarFormComponent,
+  XstrSidebarHeaderComponent
 } from './components';
 
 const APP_COMPONENTS = [
-  AppAside,
-  AppBreadcrumbs,
-  AppFooter,
-  AppHeader,
-  AppSidebar,
-  AppSidebarFooter,
-  AppSidebarForm,
-  AppSidebarHeader
+  XstrAsideComponent,
+  XstrBreadcrumbsComponent,
+  XstrFooterComponent,
+  XstrHeaderComponent,
+  XstrSidebarComponent,
+  XstrSidebarFooterComponent,
+  XstrSidebarFormComponent,
+  XstrSidebarHeaderComponent
 ]
 
 // Import directives
@@ -54,7 +54,6 @@ const APP_DIRECTIVES = [
 // Import 3rd party components
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
-import { ChartsModule } from 'ng2-charts/ng2-charts';
 import 'hammerjs';
 
 // Import routing module
@@ -79,8 +78,7 @@ import { HomeComponent } from './pages/home/home.component';
     MdToolbarModule,
     AppRoutingModule,
     BsDropdownModule.forRoot(),
-    TabsModule.forRoot(),
-    ChartsModule
+    TabsModule.forRoot()
   ],
   /* providers: [{
     provide: LocationStrategy,

@@ -1,5 +1,5 @@
-import { SimpleLayout } from './containers/simple-layout/simple-layout.component';
-import { FullLayout } from './containers/full-layout/full-layout.component';
+import { SimpleLayoutComponent } from './containers/simple-layout/simple-layout.component';
+import { FullLayoutComponent } from './containers/full-layout/full-layout.component';
 import { browser } from 'protractor';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -12,7 +12,7 @@ import { HomeComponent } from './pages/home/home.component';
 const routes: Routes = [
   {
     path: '',
-    component: FullLayout,
+    component: FullLayoutComponent,
     data: {
       title: 'Home'
     },
@@ -25,7 +25,7 @@ const routes: Routes = [
       },
       {
         path: 'dashboard',
-        loadChildren: './views/dashboard/dashboard.module#DashboardModule'
+        component: HomeComponent,
       },
       {
         path: 'home', // per moduleRoutes: 404,settings
@@ -44,22 +44,6 @@ const routes: Routes = [
         path: 'stats',
         loadChildren: 'app/pages/stats/stats.module#StatsModule' // lazyLoaded Module(with routes)
       },
-      {
-        path: 'components',
-        loadChildren: './views/components/components.module#ComponentsModule'
-      },
-      {
-        path: 'icons',
-        loadChildren: './views/icons/icons.module#IconsModule'
-      },
-      {
-        path: 'widgets',
-        loadChildren: './views/widgets/widgets.module#WidgetsModule'
-      },
-      {
-        path: 'charts',
-        loadChildren: './views/chartjs/chartjs.module#ChartJSModule'
-      },
       /* {
         path: 'm/:mtype/:id',
         loadChildren: 'app/media-browser/media-browser.module#MediaBrowserModule'
@@ -69,7 +53,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    component: SimpleLayout,
+    component: SimpleLayoutComponent,
     data: {
       title: 'Pages'
     },
@@ -82,7 +66,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    component: FullLayout,
+    component: FullLayoutComponent,
     data: {
       title: 'Home'
     },

@@ -1,0 +1,92 @@
+<div class="sidebar">
+  <xstr-sidebar-header></xstr-sidebar-header>
+  <xstr-sidebar-form></xstr-sidebar-form>
+  <nav class="sidebar-nav">
+    <ul class="nav">
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" [routerLink]="['/dashboard']"><em class="icon-speedometer"></em> Dashboard <span class="badge badge-info">NEW</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" [routerLink]="['/browse']"><em class="icon-speedometer"></em> browse <span class="badge badge-info">NEW</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" [routerLink]="['/search']"><em class="icon-speedometer"></em> search <span class="badge badge-info">NEW</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" [routerLink]="['/stats']"><em class="icon-speedometer"></em> stats <span class="badge badge-info">NEW</span></a>
+      </li>
+      <li class="divider"></li>
+      <li class="nav-title">
+        UI Elements
+      </li>
+      <li class="nav-item nav-dropdown" routerLinkActive="open" xstrNavDropdown>
+        <a class="nav-link nav-dropdown-toggle" [routerLink]="['/']" xstrNavDropdownToggle><em class="icon-puzzle"></em> Components</a>
+        <ul class="nav-dropdown-items">
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" [routerLink]="['/components/buttons']"><em class="icon-puzzle"></em> Buttons</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" [routerLink]="['/components/social-buttons']"><em class="icon-puzzle"></em> Social Buttons</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" [routerLink]="['/components/cards']"><em class="icon-puzzle"></em> Cards</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" [routerLink]="['/components/forms']"><em class="icon-puzzle"></em> Forms</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" [routerLink]="['/components/modals']"><em class="icon-puzzle"></em> Modals</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" [routerLink]="['/components/switches']"><em class="icon-puzzle"></em> Switches</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" [routerLink]="['/components/tables']"><em class="icon-puzzle"></em> Tables</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" [routerLink]="['/components/tabs']"><em class="icon-puzzle"></em> Tabs</a>
+          </li>
+        </ul>
+      </li>
+      <li class="nav-item nav-dropdown" routerLinkActive="open" xstrNavDropdown>
+        <a class="nav-link nav-dropdown-toggle" [routerLink]="['/']" xstrNavDropdownToggle><em class="icon-star"></em> Icons</a>
+        <ul class="nav-dropdown-items">
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" [routerLink]="['/icons/font-awesome']"><em class="icon-star"></em> Font Awesome<span class="badge badge-secondary">4.7</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" [routerLink]="['/icons/simple-line-icons']"><em class="icon-star"></em> Simple Line Icons</a>
+          </li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" [routerLink]="['/widgets']"><em class="icon-calculator"></em> Widgets <span class="badge badge-info">NEW</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" [routerLink]="['/charts']"><em class="icon-pie-chart"></em> Charts</a>
+      </li>
+      <li class="divider"></li>
+      <li class="nav-title">
+        Extras
+      </li>
+      <li class="nav-item nav-dropdown" xstrNavDropdown>
+        <a class="nav-link nav-dropdown-toggle" [routerLink]="['/']" xstrNavDropdownToggle><em class="icon-star"></em> Pages</a>
+        <ul class="nav-dropdown-items">
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" [routerLink]="['/pages/login']"><em class="icon-star"></em> Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" [routerLink]="['/pages/register']"><em class="icon-star"></em> Register</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" [routerLink]="['/pages/404']"><em class="icon-star"></em> Error 404</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" [routerLink]="['/pages/500']"><em class="icon-star"></em> Error 500</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  <xstr-sidebar-footer></xstr-sidebar-footer>
+</div>
