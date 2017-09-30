@@ -5,12 +5,14 @@
   },
   "apps": [
     {
+      "serviceWorker": true,
       "root": "src",
       "outDir": "www",
       "assets": [
         "assets",
         "img",
         "favicon.ico",
+        "manifest.json",
         ".htaccess"
       ],
       "index": "index.html",
