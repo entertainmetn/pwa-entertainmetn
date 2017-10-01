@@ -36,30 +36,25 @@ $vimeo:                               #aad450 !default;
 
 // Navbar
 
-$navbar-height:                       55px !default;
-$navbar-bg:                           #fff !default;
+$navbar-height:                       54px !default;
+$navbar-bg:                           #0a354c !default;
 $navbar-border: (
   bottom: (
-    size:                             1px,
+    size:                             0px,
     style:                            solid,
     color:                            $border-color
   )
 )  !default;
 $navbar-brand-width:                  155px !default;
-$navbar-brand-bg:                     #fff !default;
+$navbar-brand-logo-size:              100px auto !default;
+$navbar-brand-bg:                     $navbar-bg !default;
 $navbar-brand-logo:                   url('../img/logo.png') !default;
-$navbar-brand-logo-size:              70px auto !default;
-$navbar-brand-border: (
-  bottom: (
-    size:                             1px,
-    style:                            solid,
-    color:                            $border-color
-  )
-) !default;
+$navbar-brand-logo-size:              100px auto !default;
+$navbar-brand-border:                 $navbar-border;
 
-$navbar-color:                        $gray-600 !default;
-$navbar-hover-color:                  $gray-800 !default;
-$navbar-active-color:                 $gray-800 !default;
+$navbar-color:                        #bdd1dc !default;
+$navbar-hover-color:                  #bee8ff !default;
+$navbar-active-color:                 $navbar-hover-color !default;
 $navbar-disabled-color:               $gray-300 !default;
 
 // Sidebar
