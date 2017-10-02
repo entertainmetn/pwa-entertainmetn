@@ -6,13 +6,13 @@
   }
 }
 
-// xstr-dashboard and app-root are Angular2+ selectors. You can add here your own selectors if you need.
+// xstr-dashboard and xstr-root are Angular2+ selectors. You can add here your own selectors if you need.
 .app,
 xstr-dashboard,
-app-root {
+xstr-root {
   display: flex;
-  min-height: 100vh;
   flex-direction: column;
+  min-height: 100vh;
 }
 
 .xstr-header {
@@ -23,15 +23,15 @@ app-root {
   flex: 0 0 $footer-height;
 }
 
-.app-body {
+.xstr-body {
   display: flex;
   flex-direction: row;
-  overflow-x: hidden;
   flex-grow: 1;
+  overflow-x: hidden;
 
   .main {
-    min-width: 0;
     flex: 1;
+    min-width: 0;
   }
 
   .sidebar {
@@ -56,7 +56,7 @@ app-root {
     z-index: $zindex-sticky;
     width: 100%;
   }
-  .app-body {
+  .xstr-body {
     margin-top: $navbar-height;
   }
 }
@@ -134,11 +134,6 @@ app-root {
   .sidebar-minimized {
     .sidebar {
       flex: 0 0 $sidebar-minimized-width;
-      .sidebar-header,
-      .sidebar-form,
-      .sidebar-footer {
-        display: none;
-      }
     }
 
     &.sidebar-hidden {
@@ -279,7 +274,7 @@ app-root {
     width: 100%;
   }
 
-  .app-body {
+  .xstr-body {
     margin-bottom: $footer-height;
   }
 }
@@ -329,7 +324,7 @@ app-root {
     }
   }
 
-  .app-body {
+  .xstr-body {
     margin-top: $navbar-height;
   }
 
@@ -343,6 +338,10 @@ app-root {
     .sidebar-nav,
     .nav {
       width: $mobile-sidebar-width !important;
+    }
+
+    .sidebar-minimizer {
+      display: none;
     }
   }
 
