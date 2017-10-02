@@ -13,25 +13,34 @@ const routes: Routes = [
   {
     path: '',
     component: FullLayoutComponent,
+    children: [
+      {
+        path: '',
+        pathMatch: 'full',
+        component: HomeComponent,
+        data: {
+          title: 'Home'
+        },
+      },
+    ]
+  },
+  {
+    path: '',
+    component: FullLayoutComponent,
     data: {
       title: 'Home'
     },
     children: [
       {
-        path: '',
-        pathMatch: 'full',
-        redirectTo: 'dashboard',
-        // loadChildren: './views/dashboard/dashboard.module#DashboardModule'
-      },
-      {
         path: 'dashboard',
-        component: HomeComponent,
+        redirectTo: '',
+        // component: HomeComponent,
       },
-      {
+      /* {
         path: 'home', // per moduleRoutes: 404,settings
         component: HomeComponent,
         pathMatch: 'full'
-      },
+      }, */
       {
         path: 'browse',
         loadChildren: 'app/pages/browse/browse.module#BrowseModule' // lazyLoaded Module(with routes)

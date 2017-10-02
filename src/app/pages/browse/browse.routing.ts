@@ -6,7 +6,10 @@ import { BrowseComponent } from './browse.component';
 const routes: Routes = [
   {
     path: '',
-    component: BrowseComponent
+    component: BrowseComponent,
+    data: {
+      title: 'Browse'
+    },
   }
 
 ];
