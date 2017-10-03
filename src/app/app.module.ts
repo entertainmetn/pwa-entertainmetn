@@ -13,7 +13,7 @@ import {
 const APP_CONTAINERS = [
   FullLayoutComponent,
   SimpleLayoutComponent
-]
+];
 
 // Import components
 import {
@@ -36,7 +36,7 @@ const APP_COMPONENTS = [
   XstrSidebarFooterComponent,
   XstrSidebarFormComponent,
   XstrSidebarHeaderComponent
-]
+];
 
 // Import directives
 import {
@@ -49,7 +49,7 @@ const APP_DIRECTIVES = [
   AsideToggleDirective,
   NAV_DROPDOWN_DIRECTIVES,
   SIDEBAR_TOGGLE_DIRECTIVES
-]
+];
 
 // Import 3rd party components
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';

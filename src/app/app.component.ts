@@ -14,7 +14,7 @@ export class AppComponent {
   pixelHeight: number;
   sideNavOpened = true;
   sideNavMode = 'side';
-  sideNavPos = 'start'
+  sideNavPos = 'start';
 
   constructor() {
     this.pixelWidth = document.defaultView.innerWidth;

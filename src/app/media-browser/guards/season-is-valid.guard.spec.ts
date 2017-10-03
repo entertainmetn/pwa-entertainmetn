@@ -25,7 +25,7 @@ export class MockActivatedRouteSnapshot {
   component: any;
   firstChild: any;
   constructor(se: string) {
-    this.params = { se: 'se' }
+    this.params = { se: 'se' };
     this.params.se = se;
   }
 }

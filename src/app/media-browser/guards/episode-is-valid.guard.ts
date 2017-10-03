@@ -14,7 +14,7 @@ export class EpisodeIsValidGuard implements CanActivate {
     console.log('params.ep = ' + next.params.ep + ' isValid = ' + !isNaN(+next.params.ep));
     if (isNaN(+next.params.ep)) {
       this.router.navigate(['/pages/404']);
-      return false
+      return false;
     }
     return true;
   }

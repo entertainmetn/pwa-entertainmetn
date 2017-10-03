@@ -11,7 +11,7 @@ export class BrowseComponent implements OnInit {
 
   constructor(private route: ActivatedRoute) {
 
-    this.paramString = 'test params ='
+    this.paramString = 'test params =';
     this.route.queryParamMap.forEach(
       params => {
         // console.log('queryparam changed')

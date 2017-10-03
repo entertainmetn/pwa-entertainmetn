@@ -32,7 +32,7 @@ export class MediaBrowserComponent implements OnInit, OnDestroy {
             new Sublink('w', 'Watch'),
             new Sublink('seasons', 'Seasons'),
             new Sublink('reviews', 'Reviews')
-        ]
+        ];
     }
 
     ngOnInit() {
@@ -51,7 +51,7 @@ export class MediaBrowserComponent implements OnInit, OnDestroy {
     public isActivated(routerlink: string): boolean {
         let linkurl = '/' + this.mediaType + '/' + this.id;
         if (!routerlink.endsWith('.')) {
-            linkurl = linkurl + '/' + routerlink
+            linkurl = linkurl + '/' + routerlink;
         }
         // console.log('routeIsActive : ' + routerlink + ' => ' + this.router.isActive(routerlink, false));
         return this.router.isActive(linkurl, true);

@@ -17,7 +17,7 @@ export class MediaIsValidGuard implements CanActivate {
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
 
-    if (!next || !state) { return false }
+    if (!next || !state) { return false; }
     let isValid = true;
     let mtype: string;
     let id: string;

@@ -52,8 +52,8 @@ class ActiveMedia {
   }
   getMediaInfo(): string {
     let info = this.mediaInfo;
-    if (this.seasonID) { info += ' --- se = ' + this.seasonID }
-    if (this.episodeID) { info += ' --- ep = ' + this.episodeID }
+    if (this.seasonID) { info += ' --- se = ' + this.seasonID; }
+    if (this.episodeID) { info += ' --- ep = ' + this.episodeID; }
     return info;
   }
 }
