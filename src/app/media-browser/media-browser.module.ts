@@ -3,7 +3,7 @@ import { EpisodeComponent } from './episode/episode.component';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MdTabsModule, MdButtonModule } from '@angular/material';
+import { MatTabsModule, MatButtonModule } from '@angular/material';
 
 import { MediaBrowserRouting } from './media-browser.routing';
 import { MediaBrowserComponent } from './media-browser.component';
@@ -20,8 +20,8 @@ import { EpisodeIsValidGuard } from './guards/episode-is-valid.guard';
   imports: [
     MediaBrowserRouting,
     CommonModule,
-    MdButtonModule,
-    MdTabsModule
+    MatButtonModule,
+    MatTabsModule
   ],
   declarations: [
     MediaBrowserComponent, OverViewComponent,

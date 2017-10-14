@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MdButtonModule, MdCheckboxModule, MdSidenavModule, MdToolbarModule} from '@angular/material';
+import {MatButtonModule, MatCheckboxModule, MatSidenavModule, MatToolbarModule} from '@angular/material';
 
 
 // Import containers
@@ -72,10 +72,10 @@ import { HomeComponent } from './pages/home/home.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MdButtonModule,
-    MdCheckboxModule,
-    MdSidenavModule,
-    MdToolbarModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatSidenavModule,
+    MatToolbarModule,
     AppRoutingModule,
     BsDropdownModule.forRoot(),
     TabsModule.forRoot()

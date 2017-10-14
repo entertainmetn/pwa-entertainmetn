@@ -1,4 +1,4 @@
-import { MdSidenavModule, MdSidenav } from '@angular/material';
+import { MatSidenavModule, MatSidenav } from '@angular/material';
 import { Observable } from 'rxjs/Observable';
 import { Component, ViewChild } from '@angular/core';
 
@@ -8,7 +8,7 @@ import { Component, ViewChild } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  @ViewChild('demosidenav') public myNav: MdSidenav;
+  @ViewChild('demosidenav') public myNav: MatSidenav;
   title = 'xstr';
   pixelWidth: number;
   pixelHeight: number;
