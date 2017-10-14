@@ -2,8 +2,8 @@
     <!-- {{showInfo()}} --> 
 </p>
 
-<nav md-tab-nav-bar>
-  <a md-tab-link
+<nav mat-tab-nav-bar>
+  <a mat-tab-link
      *ngFor="let link of sublinks"
      [routerLink]="link.routerlink"
      [active]=isActivated(link.routerlink)>
