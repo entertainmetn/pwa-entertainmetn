@@ -11,8 +11,9 @@ addons:
     - lftp
   chrome: stable
 cache:
+  yarn: true
   directories:
-     - ./node_modules
+    - node_modules
 before_install:
   - pip install --user codecov
 script:
