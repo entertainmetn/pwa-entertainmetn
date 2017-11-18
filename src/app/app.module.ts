@@ -1,7 +1,11 @@
 import { NgModule } from '@angular/core';
-import {MatButtonModule, MatCheckboxModule, MatSidenavModule, MatToolbarModule} from '@angular/material';
+import { MatButtonModule, MatCheckboxModule, MatSidenavModule, MatToolbarModule } from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+// Import ServiceWorker
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 // Import containers
 import {
@@ -78,6 +82,7 @@ import { HomeComponent } from './pages/home/home.component';
     AppRoutingModule,
     BsDropdownModule.forRoot(),
     TabsModule.forRoot(),
+    environment.production ? ServiceWorkerModule.register('/ngsw-worker.js') : [],
   ],
   /* providers: [{
     provide: LocationStrategy,
