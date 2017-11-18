@@ -7,15 +7,15 @@ describe('xstr.me App', () => {
     page = new XstrMePage();
   });
 
-  /* it('should display welcome message', () => {
+  it('should display welcome message', () => {
     page.navigateTo();
     expect(page.getParagraphText()).toEqual('home works!');
-  }); */
-
-  it('should display welcome message', (done) => {
-    page.navigateTo();
-    page.getParagraphText()
-      .then((msg) => expect(msg).toEqual('home works!'))
-      .then(done, done.fail);
+/* keep old promise methode just in case
+    it('should display welcome message', (done) => {
+      page.navigateTo();
+      page.getParagraphText()
+        .then((msg) => expect(msg).toEqual('home works!'))
+        .then(done, done.fail);
+        */
   });
 });

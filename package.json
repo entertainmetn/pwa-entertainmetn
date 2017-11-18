@@ -10,7 +10,7 @@
     "build:next": "ng build --prod --bh /xstr.me/",
     "build:release": "ng build --prod --output-hashing=none --bh ./",
     "test": "ng test -cc --config karma.ci.conf.js",
-    "lint": "ng lint",
+    "lint": "ng lint --type-check --force",
     "e2e": "ng e2e"
   },
   "private": true,
@@ -42,6 +42,7 @@
     "@angular/compiler-cli": "5.0.2",
     "@angular/language-service": "5.0.2",
     "@types/jasmine": "2.8.2",
+    "@types/jasminewd2": "2.0.3",
     "@types/node": "8.0.53",
     "@types/openlayers": "4.3.11",
     "codelyzer": "4.0.1",

@@ -2,7 +2,10 @@
   "rulesDirectory": [
     "node_modules/codelyzer"
   ],
-  "extends": ["tslint:recommended", "tslint-sonarts"],
+  "extends": [
+    "tslint:recommended",
+    "tslint-sonarts"
+  ],
   "rules": {
     "arrow-return-shorthand": true,
     "callable-types": true,
@@ -16,7 +19,8 @@
     "forin": true,
     "import-blacklist": [
       true,
-      "rxjs"
+      "rxjs",
+      "rxjs/Rx"
     ],
     "import-spacing": true,
     "indent": [
@@ -32,8 +36,14 @@
     "member-access": false,
     "member-ordering": [
       true,
-      "static-before-instance",
-      "variables-before-functions"
+      {
+        "order": [
+          "static-field",
+          "instance-field",
+          "static-method",
+          "instance-method"
+        ]
+      }
     ],
     "no-arg": true,
     "no-bitwise": true,
@@ -129,9 +139,6 @@
     "use-life-cycle-interface": true,
     "use-pipe-transform-interface": true,
     "component-class-suffix": true,
-    "directive-class-suffix": true,
-    "no-access-missing-member": true,
-    "templates-use-public": true,
-    "invoke-injectable": true
+    "directive-class-suffix": true
   }
 }
