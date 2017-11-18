@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatCheckboxModule, MatSidenavModule, MatToolbarModule } from '@angular/material';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { AppComponent } from './app.component';
 
@@ -11,10 +11,10 @@ describe('AppComponent', () => {
       imports: [
         RouterTestingModule,
         MatButtonModule, MatCheckboxModule, MatSidenavModule, MatToolbarModule,
-        NoopAnimationsModule
+        NoopAnimationsModule,
       ],
       declarations: [
-        AppComponent
+        AppComponent,
       ],
     }).compileComponents();
   });
@@ -44,8 +44,8 @@ describe('AppComponent', () => {
     app.onResize({
       target: {
         innerWidth: 124,
-        innerHeight: 124
-      }
+        innerHeight: 124,
+      },
     });
     expect(app).toBeTruthy();
   });

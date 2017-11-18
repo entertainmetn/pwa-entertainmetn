@@ -1,16 +1,15 @@
-import { EpisodeIsValidGuard } from './guards/episode-is-valid.guard';
-import { SeasonIsValidGuard } from './guards/season-is-valid.guard';
-import { MediaIsValidGuard } from './guards/media-is-valid.guard';
-import { EpisodeComponent } from './episode/episode.component';
-import { SeasonComponent } from './season/season.component';
-import { SeasonsComponent } from './seasons/seasons.component';
 import { ModuleWithProviders } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-
+import { RouterModule, Routes } from '@angular/router';
+import { EpisodeComponent } from './episode/episode.component';
+import { EpisodeIsValidGuard } from './guards/episode-is-valid.guard';
+import { MediaIsValidGuard } from './guards/media-is-valid.guard';
+import { SeasonIsValidGuard } from './guards/season-is-valid.guard';
 import { MediaBrowserComponent } from './media-browser.component';
-import { WatchComponent } from './watch/watch.component';
 import { OverViewComponent } from './over-view/over-view.component';
 import { ReviewsComponent } from './reviews/reviews.component';
+import { SeasonComponent } from './season/season.component';
+import { SeasonsComponent } from './seasons/seasons.component';
+import { WatchComponent } from './watch/watch.component';
 
 const routes: Routes = [
   {
@@ -18,7 +17,7 @@ const routes: Routes = [
     component: MediaBrowserComponent,
     canActivate: [MediaIsValidGuard],
     data: {
-      title: 'Media'
+      title: 'Media',
     },
     children: [
       {
@@ -26,28 +25,28 @@ const routes: Routes = [
         component: OverViewComponent,
         pathMatch: 'full',
         data: {
-          title: 'OverView'
+          title: 'OverView',
         },
       },
       {
         path: 'w',
         component: WatchComponent,
         data: {
-          title: 'Watch'
+          title: 'Watch',
         },
       },
       {
         path: 'reviews',
         component: ReviewsComponent,
         data: {
-          title: 'Reviews'
+          title: 'Reviews',
         },
       },
       {
         path: 'seasons',
         component: SeasonsComponent,
         data: {
-          title: 'Seasons'
+          title: 'Seasons',
         },
       },
       {
@@ -57,15 +56,15 @@ const routes: Routes = [
           {
             path: '',
             component: SeasonComponent,
-            pathMatch: 'full'
+            pathMatch: 'full',
           },
           {
             path: 'w',
-            component: WatchComponent
+            component: WatchComponent,
           },
           {
             path: 'reviews',
-            component: ReviewsComponent
+            component: ReviewsComponent,
           },
           {
             path: ':ep',
@@ -74,22 +73,22 @@ const routes: Routes = [
               {
                 path: '',
                 component: EpisodeComponent,
-                pathMatch: 'full'
+                pathMatch: 'full',
               },
               {
                 path: 'w',
-                component: WatchComponent
+                component: WatchComponent,
               },
               {
                 path: 'reviews',
-                component: ReviewsComponent
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  }
+                component: ReviewsComponent,
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
 ];
 
 export const MediaBrowserRouting: ModuleWithProviders = RouterModule.forChild(routes);

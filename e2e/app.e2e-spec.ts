@@ -9,13 +9,13 @@ describe('xstr.me App', () => {
 
   /* it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to xstr!!');
+    expect(page.getParagraphText()).toEqual('home works!');
   }); */
 
-  it('should display welcome message', done => {
+  it('should display welcome message', (done) => {
     page.navigateTo();
     page.getParagraphText()
-      .then(msg => expect(msg).toEqual('Welcome to xstr!!'))
+      .then((msg) => expect(msg).toEqual('home works!'))
       .then(done, done.fail);
   });
 });

@@ -8,7 +8,7 @@ describe('XstrAsideComponent', () => {
       imports: [
       ],
       declarations: [
-        XstrAsideComponent
+        XstrAsideComponent,
       ],
     }).compileComponents();
   });

@@ -1,18 +1,17 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatCheckboxModule, MatSidenavModule, MatToolbarModule} from '@angular/material';
-
+import { BrowserModule } from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 // Import containers
 import {
   FullLayoutComponent,
-  SimpleLayoutComponent
+  SimpleLayoutComponent,
 } from './containers';
 
 const APP_CONTAINERS = [
   FullLayoutComponent,
-  SimpleLayoutComponent
+  SimpleLayoutComponent,
 ];
 
 // Import components
@@ -24,7 +23,7 @@ import {
   XstrSidebarComponent,
   XstrSidebarFooterComponent,
   XstrSidebarFormComponent,
-  XstrSidebarHeaderComponent
+  XstrSidebarHeaderComponent,
 } from './components';
 
 const APP_COMPONENTS = [
@@ -35,26 +34,26 @@ const APP_COMPONENTS = [
   XstrSidebarComponent,
   XstrSidebarFooterComponent,
   XstrSidebarFormComponent,
-  XstrSidebarHeaderComponent
+  XstrSidebarHeaderComponent,
 ];
 
 // Import directives
 import {
   AsideToggleDirective,
   NAV_DROPDOWN_DIRECTIVES,
-  SIDEBAR_TOGGLE_DIRECTIVES
+  SIDEBAR_TOGGLE_DIRECTIVES,
 } from './directives';
 
 const APP_DIRECTIVES = [
   AsideToggleDirective,
   NAV_DROPDOWN_DIRECTIVES,
-  SIDEBAR_TOGGLE_DIRECTIVES
+  SIDEBAR_TOGGLE_DIRECTIVES,
 ];
 
 // Import 3rd party components
+import 'hammerjs';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
-import 'hammerjs';
 
 // Import routing module
 import { AppRoutingModule } from './app-routing.module';
@@ -67,7 +66,7 @@ import { HomeComponent } from './pages/home/home.component';
     HomeComponent,
     ...APP_CONTAINERS,
     ...APP_COMPONENTS,
-    ...APP_DIRECTIVES
+    ...APP_DIRECTIVES,
   ],
   imports: [
     BrowserModule,
@@ -78,12 +77,12 @@ import { HomeComponent } from './pages/home/home.component';
     MatToolbarModule,
     AppRoutingModule,
     BsDropdownModule.forRoot(),
-    TabsModule.forRoot()
+    TabsModule.forRoot(),
   ],
   /* providers: [{
     provide: LocationStrategy,
     useClass: HashLocationStrategy
   }] */
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

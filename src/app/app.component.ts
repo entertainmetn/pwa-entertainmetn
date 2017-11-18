@@ -1,6 +1,6 @@
-import { MatSidenavModule, MatSidenav } from '@angular/material';
-import { Observable } from 'rxjs/Observable';
 import { Component, ViewChild } from '@angular/core';
+import { MatSidenav, MatSidenavModule } from '@angular/material';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'xstr-root',

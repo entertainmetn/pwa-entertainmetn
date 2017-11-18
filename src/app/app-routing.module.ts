@@ -1,13 +1,13 @@
-import { SimpleLayoutComponent } from './containers/simple-layout/simple-layout.component';
-import { FullLayoutComponent } from './containers/full-layout/full-layout.component';
-import { browser } from 'protractor';
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+import { browser } from 'protractor';
+import { FullLayoutComponent } from './containers/full-layout/full-layout.component';
+import { SimpleLayoutComponent } from './containers/simple-layout/simple-layout.component';
+import { HomeComponent } from './pages/home/home.component';
 
 import { SettingsModule } from './pages/settings/settings.module';
 // import { ErrorPageModule } from './pages/error-page/error-page.module';
 // import { BrowseModule } from './pages/browse/browse.module';
-import { HomeComponent } from './pages/home/home.component';
 
 const routes: Routes = [
   {
@@ -19,16 +19,16 @@ const routes: Routes = [
         pathMatch: 'full',
         component: HomeComponent,
         data: {
-          title: 'Home'
+          title: 'Home',
         },
       },
-    ]
+    ],
   },
   {
     path: '',
     component: FullLayoutComponent,
     data: {
-      title: 'Home'
+      title: 'Home',
     },
     children: [
       {
@@ -43,53 +43,53 @@ const routes: Routes = [
       }, */
       {
         path: 'browse',
-        loadChildren: 'app/pages/browse/browse.module#BrowseModule' // lazyLoaded Module(with routes)
+        loadChildren: 'app/pages/browse/browse.module#BrowseModule', // lazyLoaded Module(with routes)
       },
       {
         path: 'search',
-        loadChildren: 'app/pages/search/search.module#SearchModule' // lazyLoaded Module(with routes)
+        loadChildren: 'app/pages/search/search.module#SearchModule', // lazyLoaded Module(with routes)
       },
       {
         path: 'stats',
-        loadChildren: 'app/pages/stats/stats.module#StatsModule' // lazyLoaded Module(with routes)
+        loadChildren: 'app/pages/stats/stats.module#StatsModule', // lazyLoaded Module(with routes)
       },
       /* {
         path: 'm/:mtype/:id',
         loadChildren: 'app/media-browser/media-browser.module#MediaBrowserModule'
       }, */
-    ]
+    ],
     // loadChildren: 'app/coreui/coreui.module#CoreuiModule' // lazyLoaded Module(with routes)
   },
   {
     path: '',
     component: SimpleLayoutComponent,
     data: {
-      title: 'Pages'
+      title: 'Pages',
     },
     children: [
       {
         path: 'pages',
         loadChildren: './views/pages/pages.module#PagesModule',
-      }
-    ]
+      },
+    ],
   },
   {
     path: '',
     component: FullLayoutComponent,
     data: {
-      title: 'Home'
+      title: 'Home',
     },
     children: [
       {
         path: ':mtype/:id',
-        loadChildren: 'app/media-browser/media-browser.module#MediaBrowserModule'
+        loadChildren: 'app/media-browser/media-browser.module#MediaBrowserModule',
       },
-    ]
+    ],
     // loadChildren: 'app/coreui/coreui.module#CoreuiModule' // lazyLoaded Module(with routes)
   },
   {
     path: '**',
-    redirectTo: '/404' // redirects unknown to 404
+    redirectTo: '/404', // redirects unknown to 404
   },
 ];
 
@@ -102,6 +102,6 @@ const routes: Routes = [
     SettingsModule,
     // ErrorPageModule
   ],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule { }
