@@ -17,15 +17,16 @@ cache:
 before_install:
   - pip install --user codecov
 script:
-  - npm run lint
-  - npm test
+  - yarn run lint
+  - yarn test
   - sonar-scanner
 after_success:
   - sh scripts/build-ng.sh
   - codecov
-before_deploy:
   - sh scripts/patch-gh-pages.sh
   - sh scripts/package-www.sh
+before_deploy:
+  - echo "after deploy"
 deploy:
   - provider: pages
     local_dir: www
