@@ -19,7 +19,7 @@ before_install:
 script:
   - yarn run lint
   - yarn test
-  - sonar-scanner
+  - sonar-scanner -X
 after_success:
   - sh scripts/build-ng.sh
   - codecov
