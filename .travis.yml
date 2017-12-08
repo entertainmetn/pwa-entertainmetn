@@ -26,7 +26,7 @@ after_success:
   - sh scripts/patch-gh-pages.sh
   - sh scripts/package-www.sh
 before_deploy:
-  - echo "after deploy"
+  - echo "after deploy steps"
 deploy:
   - provider: pages
     local_dir: www
