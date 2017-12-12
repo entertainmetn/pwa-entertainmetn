@@ -1,3 +1,4 @@
+import { environment } from './../../../environments/environment.prod';
 import { Component, OnInit } from '@angular/core';
 import { GenericInfo } from '../../api/models';
 import { GenericInfoControllerService } from './../../api/services/generic-info-controller.service';
@@ -8,12 +9,14 @@ import { GenericInfoControllerService } from './../../api/services/generic-info-
   styleUrls: ['./stats.component.css'],
 })
 export class StatsComponent implements OnInit {
-  private genericInfo: GenericInfo;
+  public genericInfo: GenericInfo;
+  public apiURL: string;
   constructor(private genericInfoControllerService: GenericInfoControllerService) {
     this.genericInfo = new GenericInfo();
     this.genericInfo.name = 'a';
     this.genericInfo.version = 'b';
     this.genericInfo.description = 'c';
+    this.apiURL = environment.apiURL;
   }
 
   ngOnInit() {
