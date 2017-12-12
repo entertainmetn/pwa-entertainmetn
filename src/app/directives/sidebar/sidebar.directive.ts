@@ -1,10 +1,10 @@
 import { Directive, HostListener } from '@angular/core';
 
-/**
+/*
 * Allows the sidebar to be toggled via click.
 */
 @Directive({
-  selector: '[xstrSidebarToggler]'
+  selector: '[xstrSidebarToggler]',
 })
 export class SidebarToggleDirective {
   constructor() { }
@@ -88,5 +88,5 @@ export const SIDEBAR_TOGGLE_DIRECTIVES = [
     SidebarToggleDirective,
     SidebarMinimizeDirective,
     SidebarOffCanvasCloseDirective,
-    MobileSidebarToggleDirective
+    MobileSidebarToggleDirective,
 ];

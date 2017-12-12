@@ -8,7 +8,7 @@ describe('XstrFooterComponent', () => {
       imports: [
       ],
       declarations: [
-        XstrFooterComponent
+        XstrFooterComponent,
       ],
     }).compileComponents();
   });

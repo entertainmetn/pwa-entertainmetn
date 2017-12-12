@@ -1,5 +1,5 @@
-import { TestBed } from '@angular/core/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { TestBed } from '@angular/core/testing';
 
 import { XstrSidebarComponent } from './xstr-sidebar.component';
 
@@ -9,9 +9,9 @@ describe('XstrSidebarComponent', () => {
       imports: [
       ],
       declarations: [
-        XstrSidebarComponent
+        XstrSidebarComponent,
       ],
-      schemas: [NO_ERRORS_SCHEMA]
+      schemas: [NO_ERRORS_SCHEMA],
     }).compileComponents();
   });
 

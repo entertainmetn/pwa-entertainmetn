@@ -5,7 +5,7 @@ import { Observable } from 'rxjs/Observable';
 @Component({
   selector: 'xstr-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
   @ViewChild('demosidenav') public myNav: MatSidenav;

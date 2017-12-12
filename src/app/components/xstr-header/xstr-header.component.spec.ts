@@ -1,5 +1,5 @@
-import { TestBed } from '@angular/core/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { TestBed } from '@angular/core/testing';
 
 import { XstrHeaderComponent } from './xstr-header.component';
 
@@ -9,9 +9,9 @@ describe('XstrHeaderComponent', () => {
       imports: [
       ],
       declarations: [
-        XstrHeaderComponent
+        XstrHeaderComponent,
       ],
-      schemas: [NO_ERRORS_SCHEMA]
+      schemas: [NO_ERRORS_SCHEMA],
     }).compileComponents();
   });
 

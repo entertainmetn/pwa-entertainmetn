@@ -1,5 +1,5 @@
-import { TestBed } from '@angular/core/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { TestBed } from '@angular/core/testing';
 
 import { SimpleLayoutComponent } from './simple-layout.component';
 
@@ -9,9 +9,9 @@ describe('SimpleLayoutComponent', () => {
       imports: [
       ],
       declarations: [
-        SimpleLayoutComponent
+        SimpleLayoutComponent,
       ],
-      schemas: [NO_ERRORS_SCHEMA]
+      schemas: [NO_ERRORS_SCHEMA],
     }).compileComponents();
   });
 

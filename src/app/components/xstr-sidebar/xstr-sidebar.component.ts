@@ -2,7 +2,7 @@ import { Component, ElementRef, OnInit } from '@angular/core';
 
 @Component({
   selector: 'xstr-sidebar',
-  templateUrl: './xstr-sidebar.component.html'
+  templateUrl: './xstr-sidebar.component.html',
 })
 export class XstrSidebarComponent implements OnInit {
 
@@ -10,8 +10,8 @@ export class XstrSidebarComponent implements OnInit {
 
   // wait for the component to render completely
   ngOnInit(): void {
-    const nativeElement: HTMLElement = this.el.nativeElement,
-      parentElement: HTMLElement = nativeElement.parentElement;
+    const nativeElement: HTMLElement = this.el.nativeElement;
+    const parentElement: HTMLElement = nativeElement.parentElement;
     // move all children out of the element
     while (nativeElement.firstChild) {
       parentElement.insertBefore(nativeElement.firstChild, nativeElement);

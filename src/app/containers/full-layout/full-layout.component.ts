@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 @Component({
   selector: 'xstr-dashboard',
-  templateUrl: './full-layout.component.html'
+  templateUrl: './full-layout.component.html',
 })
 export class FullLayoutComponent implements OnInit {
 

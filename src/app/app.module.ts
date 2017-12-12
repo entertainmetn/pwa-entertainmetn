@@ -64,6 +64,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 
+// Import API module
+import { ApiModule } from './api/api.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -73,6 +76,7 @@ import { HomeComponent } from './pages/home/home.component';
     ...APP_DIRECTIVES,
   ],
   imports: [
+    ApiModule,
     BrowserModule,
     BrowserAnimationsModule,
     MatButtonModule,

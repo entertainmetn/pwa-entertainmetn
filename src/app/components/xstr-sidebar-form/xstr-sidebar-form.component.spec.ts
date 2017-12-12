@@ -8,7 +8,7 @@ describe('XstrSidebarFormComponent', () => {
       imports: [
       ],
       declarations: [
-        XstrSidebarFormComponent
+        XstrSidebarFormComponent,
       ],
     }).compileComponents();
   });

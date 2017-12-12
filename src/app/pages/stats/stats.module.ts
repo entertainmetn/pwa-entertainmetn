@@ -5,10 +5,10 @@ import { routing } from './stats.routing';
 
 @NgModule({
   imports: [
-    routing
+    routing,
     ],
   declarations: [
-    StatsComponent
-    ]
+    StatsComponent,
+    ],
 })
 export class StatsModule { }
