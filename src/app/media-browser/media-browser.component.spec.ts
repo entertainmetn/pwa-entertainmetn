@@ -1,9 +1,9 @@
-import { MediaBrowserService } from './media-browser.service';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { ActivatedRoute, Router } from '@angular/router';
 // import { RouterTestingModule } from '@angular/router/testing';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { MediaBrowserService } from './media-browser.service';
 
 import { MediaBrowserComponent } from './media-browser.component';
 
@@ -56,7 +56,7 @@ describe('MediaBrowserComponent', () => {
         { provide: MediaBrowserService, useValue: mockMediaBrowserService }
       ],
       declarations: [MediaBrowserComponent],
-      schemas: [NO_ERRORS_SCHEMA]
+      schemas: [NO_ERRORS_SCHEMA],
     })
       .compileComponents();
   }));
