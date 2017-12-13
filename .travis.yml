@@ -6,6 +6,9 @@ addons:
   sonarcloud:
     organization: $sonarcloud_organization_key
     token: $sonarcloud_token
+    branches:
+      - master
+      - next
   apt:
     packages:
     - lftp
