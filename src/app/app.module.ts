@@ -55,7 +55,6 @@ const APP_DIRECTIVES = [
 ];
 
 // Import 3rd party components
-import 'hammerjs';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 
