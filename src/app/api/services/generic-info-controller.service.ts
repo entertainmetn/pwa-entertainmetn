@@ -24,7 +24,7 @@ export class GenericInfoControllerService extends BaseService {
   /**
    */
   genericInfoUsingGETResponse(): Observable<HttpResponse<GenericInfo>> {
-    let __params = new HttpParams();
+    let __params = this.newParams();
     let __headers = new HttpHeaders();
     let __body: any = null;
     let req = new HttpRequest<any>(

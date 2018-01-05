@@ -25,7 +25,7 @@ export class ApplicationInfoControllerService extends BaseService {
    * @param name - name
    */
   applicationInfoUsingGETResponse(name?: string): Observable<HttpResponse<ApplicationInfo>> {
-    let __params = new HttpParams();
+    let __params = this.newParams();
     let __headers = new HttpHeaders();
     let __body: any = null;
     if (name != null) __params = __params.set("name", name.toString());
