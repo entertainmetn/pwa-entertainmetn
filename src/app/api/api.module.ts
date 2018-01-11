@@ -1,25 +1,27 @@
-import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { NgModule } from '@angular/core';
 import { ApiConfiguration } from './api-configuration';
 
-import { GenericInfoControllerService } from './services/generic-info-controller.service';
 import { ApplicationInfoControllerService } from './services/application-info-controller.service';
+import { GenericInfoControllerService } from './services/generic-info-controller.service';
+import { XstrMovieControllerService } from './services/xstr-movie-controller.service';
 
 /**
  * Module that provides instances for all API services
  */
 @NgModule({
   imports: [
-    HttpClientModule
+    HttpClientModule,
   ],
   exports: [
-    HttpClientModule
+    HttpClientModule,
   ],
   declarations: [],
   providers: [
     ApiConfiguration,
    GenericInfoControllerService,
-   ApplicationInfoControllerService
+   ApplicationInfoControllerService,
+   XstrMovieControllerService,
   ],
 })
 export class ApiModule { }
