@@ -53,6 +53,10 @@ const routes: Routes = [
         path: 'stats',
         loadChildren: 'app/pages/stats/stats.module#StatsModule', // lazyLoaded Module(with routes)
       },
+      {
+        path: 'settings',
+        loadChildren: 'app/pages/settings/settings.module#SettingsModule', // lazyLoaded Module(with routes)
+      },
       /* {
         path: 'm/:mtype/:id',
         loadChildren: 'app/media-browser/media-browser.module#MediaBrowserModule'

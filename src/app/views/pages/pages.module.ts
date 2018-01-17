@@ -13,7 +13,7 @@ import { PagesRoutingModule } from './pages-routing.module';
     P404Component,
     P500Component,
     LoginComponent,
-    RegisterComponent
-  ]
+    RegisterComponent,
+  ],
 })
 export class PagesModule { }
