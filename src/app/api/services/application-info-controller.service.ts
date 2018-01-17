@@ -11,8 +11,10 @@ import { filter } from 'rxjs/operators/filter';
 
 import { ApplicationInfo } from '../models/application-info';
 
-
-@Injectable()
+/**
+ * Application Info Controller
+ */
+ @Injectable()
 export class ApplicationInfoControllerService extends BaseService {
   constructor(
     config: ApiConfiguration,
@@ -22,9 +24,10 @@ export class ApplicationInfoControllerService extends BaseService {
   }
 
   /**
-   * @param name - name
+   * @param name name
+   * @return OK
    */
-  applicationInfoUsingGETResponse(name?: string): Observable<HttpResponse<ApplicationInfo>> {
+   applicationInfoUsingGETResponse(name?: string): Observable<HttpResponse<ApplicationInfo>> {
     let __params = this.newParams();
     let __headers = new HttpHeaders();
     let __body: any = null;
@@ -51,13 +54,15 @@ export class ApplicationInfoControllerService extends BaseService {
   }
 
   /**
-   * @param name - name
+   * @param name name
+   * @return OK
    */
-  applicationInfoUsingGET(name?: string): Observable<ApplicationInfo> {
+   applicationInfoUsingGET(name?: string): Observable<ApplicationInfo> {
     return this.applicationInfoUsingGETResponse(name).pipe(
       map(_r => _r.body)
     );
-  }}
+  }
+}
 
 export module ApplicationInfoControllerService {
 }

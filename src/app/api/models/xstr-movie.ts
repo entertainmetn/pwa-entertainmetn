@@ -1,9 +1,10 @@
 /* tslint:disable */
 
-/**
- */
-export class XstrMovie {
-    id?: number;
-    name?: string;
-    title?: string;
+export interface XstrMovie {
+
+  id?: number;
+
+  name?: string;
+
+  title?: string;
 }

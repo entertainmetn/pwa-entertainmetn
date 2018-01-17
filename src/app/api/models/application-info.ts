@@ -1,8 +1,8 @@
 /* tslint:disable */
 
-/**
- */
-export class ApplicationInfo {
-    content?: string;
-    id?: number;
+export interface ApplicationInfo {
+
+  content?: string;
+
+  id?: number;
 }

@@ -11,8 +11,10 @@ import { filter } from 'rxjs/operators/filter';
 
 import { XstrMovie } from '../models/xstr-movie';
 
-
-@Injectable()
+/**
+ * Xstr Movie Controller
+ */
+ @Injectable()
 export class XstrMovieControllerService extends BaseService {
   constructor(
     config: ApiConfiguration,
@@ -22,9 +24,10 @@ export class XstrMovieControllerService extends BaseService {
   }
 
   /**
-   * @param name - name
+   * @param name name
+   * @return OK
    */
-  xstrMovieListUsingGETResponse(name?: string): Observable<HttpResponse<XstrMovie[]>> {
+   xstrMovieListUsingGETResponse(name?: string): Observable<HttpResponse<XstrMovie[]>> {
     let __params = this.newParams();
     let __headers = new HttpHeaders();
     let __body: any = null;
@@ -51,21 +54,24 @@ export class XstrMovieControllerService extends BaseService {
   }
 
   /**
-   * @param name - name
+   * @param name name
+   * @return OK
    */
-  xstrMovieListUsingGET(name?: string): Observable<XstrMovie[]> {
+   xstrMovieListUsingGET(name?: string): Observable<XstrMovie[]> {
     return this.xstrMovieListUsingGETResponse(name).pipe(
       map(_r => _r.body)
     );
   }
+
   /**
-   * @param id - id
+   * @param id id
+   * @return OK
    */
-  xstrMovieUsingGETResponse(id: number): Observable<HttpResponse<XstrMovie>> {
+   xstrMovieUsingGETResponse(id: number): Observable<HttpResponse<XstrMovie>> {
     let __params = this.newParams();
     let __headers = new HttpHeaders();
     let __body: any = null;
-    
+
     let req = new HttpRequest<any>(
       "GET",
       this.rootUrl + `/mv/${id}`,
@@ -88,13 +94,15 @@ export class XstrMovieControllerService extends BaseService {
   }
 
   /**
-   * @param id - id
+   * @param id id
+   * @return OK
    */
-  xstrMovieUsingGET(id: number): Observable<XstrMovie> {
+   xstrMovieUsingGET(id: number): Observable<XstrMovie> {
     return this.xstrMovieUsingGETResponse(id).pipe(
       map(_r => _r.body)
     );
-  }}
+  }
+}
 
 export module XstrMovieControllerService {
 }

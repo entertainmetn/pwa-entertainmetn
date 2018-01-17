@@ -11,8 +11,10 @@ import { filter } from 'rxjs/operators/filter';
 
 import { GenericInfo } from '../models/generic-info';
 
-
-@Injectable()
+/**
+ * Generic Info Controller
+ */
+ @Injectable()
 export class GenericInfoControllerService extends BaseService {
   constructor(
     config: ApiConfiguration,
@@ -22,8 +24,9 @@ export class GenericInfoControllerService extends BaseService {
   }
 
   /**
+   * @return OK
    */
-  genericInfoUsingGETResponse(): Observable<HttpResponse<GenericInfo>> {
+   genericInfoUsingGETResponse(): Observable<HttpResponse<GenericInfo>> {
     let __params = this.newParams();
     let __headers = new HttpHeaders();
     let __body: any = null;
@@ -49,12 +52,14 @@ export class GenericInfoControllerService extends BaseService {
   }
 
   /**
+   * @return OK
    */
-  genericInfoUsingGET(): Observable<GenericInfo> {
+   genericInfoUsingGET(): Observable<GenericInfo> {
     return this.genericInfoUsingGETResponse().pipe(
       map(_r => _r.body)
     );
-  }}
+  }
+}
 
 export module GenericInfoControllerService {
 }
