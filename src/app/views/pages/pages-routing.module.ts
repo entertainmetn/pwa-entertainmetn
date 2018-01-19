@@ -8,7 +8,7 @@ import { RegisterComponent } from './register.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'pages',
     data: {
       title: 'Example Pages',
     },

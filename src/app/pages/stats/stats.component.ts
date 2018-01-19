@@ -1,6 +1,6 @@
-import { environment } from './../../../environments/environment.prod';
 import { Component, OnInit } from '@angular/core';
 import { GenericInfo } from '../../api/models';
+import { environment } from './../../../environments/environment.prod';
 import { GenericInfoControllerService } from './../../api/services/generic-info-controller.service';
 
 @Component({
@@ -12,10 +12,10 @@ export class StatsComponent implements OnInit {
   public genericInfo: GenericInfo;
   public apiURL: string;
   constructor(private genericInfoControllerService: GenericInfoControllerService) {
-    this.genericInfo = new GenericInfo();
-    this.genericInfo.name = 'a';
-    this.genericInfo.version = 'b';
-    this.genericInfo.description = 'c';
+    // this.genericInfo = new GenericInfo();
+    // this.genericInfo.name = 'a';
+    // this.genericInfo.version = 'b';
+    // this.genericInfo.description = 'c';
     this.apiURL = environment.apiURL;
   }
 

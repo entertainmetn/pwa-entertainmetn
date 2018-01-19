@@ -1,13 +1,12 @@
-import { NgModule } from '@angular/core';
+import { isDevMode, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { browser } from 'protractor';
+import { environment } from './../environments/environment.prod';
 import { FullLayoutComponent } from './containers/full-layout/full-layout.component';
 import { SimpleLayoutComponent } from './containers/simple-layout/simple-layout.component';
 import { HomeComponent } from './pages/home/home.component';
 
-import { SettingsModule } from './pages/settings/settings.module';
-// import { ErrorPageModule } from './pages/error-page/error-page.module';
-// import { BrowseModule } from './pages/browse/browse.module';
+import { PagesModule } from './views/pages/pages.module';
 
 const routes: Routes = [
   {
@@ -34,13 +33,7 @@ const routes: Routes = [
       {
         path: 'dashboard',
         redirectTo: '',
-        // component: HomeComponent,
       },
-      /* {
-        path: 'home', // per moduleRoutes: 404,settings
-        component: HomeComponent,
-        pathMatch: 'full'
-      }, */
       {
         path: 'browse',
         loadChildren: 'app/pages/browse/browse.module#BrowseModule', // lazyLoaded Module(with routes)
@@ -57,12 +50,7 @@ const routes: Routes = [
         path: 'settings',
         loadChildren: 'app/pages/settings/settings.module#SettingsModule', // lazyLoaded Module(with routes)
       },
-      /* {
-        path: 'm/:mtype/:id',
-        loadChildren: 'app/media-browser/media-browser.module#MediaBrowserModule'
-      }, */
     ],
-    // loadChildren: 'app/coreui/coreui.module#CoreuiModule' // lazyLoaded Module(with routes)
   },
   {
     path: '',
@@ -72,7 +60,7 @@ const routes: Routes = [
     },
     children: [
       {
-        path: 'pages',
+        path: '',
         loadChildren: './views/pages/pages.module#PagesModule',
       },
     ],
@@ -89,11 +77,14 @@ const routes: Routes = [
         loadChildren: 'app/media-browser/media-browser.module#MediaBrowserModule',
       },
     ],
-    // loadChildren: 'app/coreui/coreui.module#CoreuiModule' // lazyLoaded Module(with routes)
+  },
+  {
+    path: '404',
+    redirectTo: 'pages/404', // redirects unknown to 404
   },
   {
     path: '**',
-    redirectTo: '/404', // redirects unknown to 404
+    redirectTo: 'pages/404', // redirects unknown to 404
   },
 ];
 
@@ -101,10 +92,9 @@ const routes: Routes = [
   imports: [
     RouterModule.forRoot(
       routes,
-      // { enableTracing: true } // <-- debugging purposes only
+      { enableTracing: ( isDevMode() ) }, // <-- debugging purposes only
     ),
-    SettingsModule,
-    // ErrorPageModule
+    PagesModule,
   ],
   exports: [RouterModule],
 })

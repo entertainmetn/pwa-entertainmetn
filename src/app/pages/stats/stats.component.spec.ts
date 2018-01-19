@@ -10,7 +10,7 @@ import { StatsComponent } from './stats.component';
 export class MockGenericInfoControllerService {
   private genericInfo: GenericInfo;
   constructor() {
-    this.genericInfo = new GenericInfo();
+    // this.genericInfo = new GenericInfo();
     this.genericInfo.name = 'a';
     this.genericInfo.version = 'b';
     this.genericInfo.description = 'c';
