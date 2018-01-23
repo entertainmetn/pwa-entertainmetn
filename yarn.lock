@@ -203,9 +203,9 @@
   version "2.8.2"
   resolved "https://registry.yarnpkg.com/@types/jasmine/-/jasmine-2.8.2.tgz#6ae4d8740c0da5d5a627df725b4eed71b8e36668"
 
-"@types/jasmine@2.8.4":
-  version "2.8.4"
-  resolved "https://registry.yarnpkg.com/@types/jasmine/-/jasmine-2.8.4.tgz#5528fb5e53f1b27594f81f18debb7eab8dc532cb"
+"@types/jasmine@2.8.5":
+  version "2.8.5"
+  resolved "https://registry.yarnpkg.com/@types/jasmine/-/jasmine-2.8.5.tgz#96e58872583fa80c7ea0dd29024b180d5e133678"
 
 "@types/jasminewd2@2.0.3":
   version "2.0.3"
@@ -3730,9 +3730,9 @@ istanbul-reports@^1.1.3:
   dependencies:
     handlebars "^4.0.3"
 
-jasmine-core@2.9.0:
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/jasmine-core/-/jasmine-core-2.9.0.tgz#bfbb56defcd30789adec5a3fbba8504233289c72"
+jasmine-core@2.9.1:
+  version "2.9.1"
+  resolved "https://registry.yarnpkg.com/jasmine-core/-/jasmine-core-2.9.1.tgz#b6bbc1d8e65250d56f5888461705ebeeeb88f22f"
 
 jasmine-core@~2.8.0:
   version "2.8.0"
@@ -4536,9 +4536,9 @@ ng-swagger-gen@0.10.0:
     argparse "^1.0.9"
     mustache "^2.3.0"
 
-ngx-bootstrap@2.0.0-rc.0:
-  version "2.0.0-rc.0"
-  resolved "https://registry.yarnpkg.com/ngx-bootstrap/-/ngx-bootstrap-2.0.0-rc.0.tgz#c423117f9a3b36a19514c531b7fd9a56217f060e"
+ngx-bootstrap@2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/ngx-bootstrap/-/ngx-bootstrap-2.0.1.tgz#94c0a5572e44ee874bc131a4e80cd172b9852617"
 
 no-case@^2.2.0:
   version "2.3.2"

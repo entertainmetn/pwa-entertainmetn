@@ -7,13 +7,18 @@ import { Observable } from 'rxjs/Observable';
 import { StatsComponent } from './stats.component';
 
 // ADDED MOCK CLASS
+export class GenericInfoMock implements GenericInfo {
+
+  name = 'a';
+  version = 'b';
+  description = 'c';
+}
+
+// tslint:disable-next-line:max-classes-per-file
 export class MockGenericInfoControllerService {
-  private genericInfo: GenericInfo;
+  private genericInfo: GenericInfoMock;
   constructor() {
-    // this.genericInfo = new GenericInfo();
-    this.genericInfo.name = 'a';
-    this.genericInfo.version = 'b';
-    this.genericInfo.description = 'c';
+    this.genericInfo = new GenericInfoMock();
   }
 
   genericInfoUsingGET(): Observable<GenericInfo> {

@@ -12,7 +12,7 @@ addons:
   apt:
     packages:
     - lftp
-  chrome: stable
+  firefox: latest
 cache:
   yarn: true
   directories:
