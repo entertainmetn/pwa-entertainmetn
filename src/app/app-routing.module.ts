@@ -1,4 +1,4 @@
-import { isDevMode, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { browser } from 'protractor';
 import { environment } from './../environments/environment.prod';
@@ -92,7 +92,7 @@ const routes: Routes = [
   imports: [
     RouterModule.forRoot(
       routes,
-      { enableTracing: ( isDevMode() ) }, // <-- debugging purposes only
+      { enableTracing: ( !environment.production ) }, // <-- debugging purposes only
     ),
     PagesModule,
   ],
