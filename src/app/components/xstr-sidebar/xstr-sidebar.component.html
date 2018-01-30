@@ -1,49 +1,7 @@
 <div class="sidebar">
   <xstr-sidebar-header></xstr-sidebar-header>
   <xstr-sidebar-form></xstr-sidebar-form>
-  <nav class="sidebar-nav">
-    <ul class="nav">
-      <li class="nav-title">
-        Navigation
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLinkActive="active" [routerLink]="['/dashboard']"><em class="icon-speedometer"></em> Dashboard <span class="badge badge-info">NEW</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLinkActive="active" [routerLink]="['/browse']"><em class="icon-speedometer"></em> browse <span class="badge badge-info">NEW</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLinkActive="active" [routerLink]="['/search']"><em class="icon-speedometer"></em> search <span class="badge badge-info">NEW</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLinkActive="active" [routerLink]="['/stats']"><em class="icon-speedometer"></em> stats <span class="badge badge-info">NEW</span></a>
-      </li>
-      <li class="divider"></li>
-      <li class="nav-title">
-        UI Elements
-      </li>
-      <li class="divider"></li>
-      <li class="nav-title">
-        Extras
-      </li>
-      <li class="nav-item nav-dropdown" xstrNavDropdown>
-        <a class="nav-link nav-dropdown-toggle" [routerLink]="['/']" xstrNavDropdownToggle><em class="icon-star"></em> Pages</a>
-        <ul class="nav-dropdown-items">
-          <li class="nav-item">
-            <a class="nav-link" routerLinkActive="active" [routerLink]="['/pages/login']"><em class="icon-star"></em> Login</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLinkActive="active" [routerLink]="['/pages/register']"><em class="icon-star"></em> Register</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLinkActive="active" [routerLink]="['/pages/404']"><em class="icon-star"></em> Error 404</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLinkActive="active" [routerLink]="['/pages/500']"><em class="icon-star"></em> Error 500</a>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </nav>
+  <xstr-sidebar-nav></xstr-sidebar-nav>
   <xstr-sidebar-footer></xstr-sidebar-footer>
+  <xstr-sidebar-minimizer></xstr-sidebar-minimizer>
 </div>

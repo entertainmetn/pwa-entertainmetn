@@ -13,13 +13,14 @@ import {
   SimpleLayoutComponent,
 } from './containers';
 
-const APP_CONTAINERS = [
+const XSTR_CONTAINERS = [
   FullLayoutComponent,
   SimpleLayoutComponent,
 ];
 
 // Import components
 import {
+  XSTR_SIDEBAR_NAV,
   XstrAsideComponent,
   XstrBreadcrumbsComponent,
   XstrFooterComponent,
@@ -28,9 +29,10 @@ import {
   XstrSidebarFooterComponent,
   XstrSidebarFormComponent,
   XstrSidebarHeaderComponent,
+  XstrSidebarMinimizerComponent,
 } from './components';
 
-const APP_COMPONENTS = [
+const XSTR_COMPONENTS = [
   XstrAsideComponent,
   XstrBreadcrumbsComponent,
   XstrFooterComponent,
@@ -39,18 +41,22 @@ const APP_COMPONENTS = [
   XstrSidebarFooterComponent,
   XstrSidebarFormComponent,
   XstrSidebarHeaderComponent,
+  XstrSidebarMinimizerComponent,
+  XSTR_SIDEBAR_NAV,
 ];
 
 // Import directives
 import {
   AsideToggleDirective,
   NAV_DROPDOWN_DIRECTIVES,
+  ReplaceDirective,
   SIDEBAR_TOGGLE_DIRECTIVES,
 } from './directives';
 
-const APP_DIRECTIVES = [
+const XSTR_DIRECTIVES = [
   AsideToggleDirective,
   NAV_DROPDOWN_DIRECTIVES,
+  ReplaceDirective,
   SIDEBAR_TOGGLE_DIRECTIVES,
 ];
 
@@ -59,21 +65,14 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 
 // Import routing module
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app.routing';
 import { HomeComponent } from './pages/home/home.component';
 
 // Import API module
 import { ApiModule } from './api/api.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    ...APP_CONTAINERS,
-    ...APP_COMPONENTS,
-    ...APP_DIRECTIVES,
-  ],
   imports: [
     ApiModule,
     BrowserModule,
@@ -86,6 +85,13 @@ import { ApiModule } from './api/api.module';
     BsDropdownModule.forRoot(),
     TabsModule.forRoot(),
     environment.production ? ServiceWorkerModule.register('/ngsw-worker.js') : [],
+  ],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    ...XSTR_CONTAINERS,
+    ...XSTR_COMPONENTS,
+    ...XSTR_DIRECTIVES,
   ],
   /* providers: [{
     provide: LocationStrategy,
