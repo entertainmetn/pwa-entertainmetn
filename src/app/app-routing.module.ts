@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { browser } from 'protractor';
-import { environment } from './../environments/environment.prod';
+import { environment } from './../environments/environment';
 import { FullLayoutComponent } from './containers/full-layout/full-layout.component';
 import { SimpleLayoutComponent } from './containers/simple-layout/simple-layout.component';
 import { HomeComponent } from './pages/home/home.component';
