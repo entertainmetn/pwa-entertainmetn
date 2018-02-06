@@ -1,6 +1,6 @@
 import { Directive, HostListener } from '@angular/core';
 
-/**
+/*
 * Allows the sidebar to be toggled via click.
 */
 @Directive({

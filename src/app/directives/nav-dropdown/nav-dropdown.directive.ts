@@ -1,7 +1,7 @@
-import { Directive, HostListener, ElementRef } from '@angular/core';
+import { Directive, ElementRef, HostListener } from '@angular/core';
 
 @Directive({
-  selector: '[xstrNavDropdown]'
+  selector: '[xstrNavDropdown]',
 })
 export class NavDropdownDirective {
 
@@ -12,7 +12,7 @@ export class NavDropdownDirective {
   }
 }
 
-/**
+/*!
 * Allows the dropdown to be toggled via click.
 */
 @Directive({
