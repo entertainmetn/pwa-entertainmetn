@@ -5,14 +5,9 @@ import { P404Component } from './404.component';
 import { P500Component } from './500.component';
 import { LoginComponent } from './login.component';
 import { RegisterComponent } from './register.component';
+import { TestComponent } from './test.component';
 
 const routes: Routes = [
-  {
-    path: 'pages',
-    data: {
-      title: 'Example Pages',
-    },
-    children: [
       {
         path: '404',
         component: P404Component,
@@ -25,6 +20,13 @@ const routes: Routes = [
         component: P500Component,
         data: {
           title: 'Page 500',
+        },
+      },
+      {
+        path: 'test',
+        component: TestComponent,
+        data: {
+          title: 'Page Test',
         },
       },
       {
@@ -41,8 +43,6 @@ const routes: Routes = [
           title: 'Register Page',
         },
       },
-    ],
-  },
 ];
 
 @NgModule({

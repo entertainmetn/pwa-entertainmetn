@@ -82,7 +82,7 @@ export const navigation = [
     variant: 'success',
   },
   {
-    name: 'Github page for the api',
+    name: 'Github for the api',
     url: 'https://github.com/guedouari/api.xstr.me/',
     icon: 'icon-layers',
     variant: 'danger',

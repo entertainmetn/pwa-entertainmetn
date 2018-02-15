@@ -11,11 +11,13 @@ import { environment } from '../environments/environment';
 import {
   FullLayoutComponent,
   SimpleLayoutComponent,
+  XstrShellComponent,
 } from './containers';
 
 const XSTR_CONTAINERS = [
   FullLayoutComponent,
   SimpleLayoutComponent,
+  XstrShellComponent,
 ];
 
 // Import components
