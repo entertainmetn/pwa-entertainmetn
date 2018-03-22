@@ -46,7 +46,7 @@ export class GenericInfoControllerService extends BaseService {
         let _resp = _r as HttpResponse<any>;
         let _body: GenericInfo = null;
         _body = _resp.body as GenericInfo
-        return _resp.clone({body: _body}) as HttpResponse<GenericInfo>;
+        return _resp.clone({body: _body});
       })
     );
   }

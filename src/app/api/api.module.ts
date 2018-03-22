@@ -4,7 +4,7 @@ import { ApiConfiguration } from './api-configuration';
 
 import { ApplicationInfoControllerService } from './services/application-info-controller.service';
 import { GenericInfoControllerService } from './services/generic-info-controller.service';
-import { XstrMovieControllerService } from './services/xstr-movie-controller.service';
+import { MovieControllerService } from './services/movie-controller.service';
 
 /**
  * Module that provides instances for all API services
@@ -21,7 +21,7 @@ import { XstrMovieControllerService } from './services/xstr-movie-controller.ser
     ApiConfiguration,
    GenericInfoControllerService,
    ApplicationInfoControllerService,
-   XstrMovieControllerService,
+   MovieControllerService,
   ],
 })
 export class ApiModule { }

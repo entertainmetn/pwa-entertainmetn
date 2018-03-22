@@ -20,8 +20,9 @@ cache:
 before_install:
   - pip install --user codecov
 script:
-  - yarn run lint
+  - yarn lint
   - yarn test
+  - yarn e2e
   - sonar-scanner -Dsonar.projectKey=client.xstr.me -X
 after_success:
   - sh scripts/build-ng.sh
@@ -29,7 +30,7 @@ after_success:
   - sh scripts/patch-gh-pages.sh
   - sh scripts/package-www.sh
 before_deploy:
-  - echo "after deploy steps"
+  - echo "before deploy steps"
 deploy:
   - provider: pages
     local_dir: www
