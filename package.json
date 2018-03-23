@@ -7,7 +7,7 @@
     "ng-gen": "node_modules/.bin/ng-swagger-gen -i http://localhost:8080/api-doc",
     "start": "ng serve",
     "build": "ng build --prod",
-    "build:next": "ng build --prod --bh /xstr.me/",
+    "build:next": "ng build --prod --bh /xstr.me/ && yarn ngsw-config www src/ngsw-config.json /xstr.me/",
     "build:release": "ng build --prod --output-hashing=none --bh ./",
     "test": "ng test --code-coverage --config karma.ci.conf.js",
     "lint": "ng lint --force > issues.json",
