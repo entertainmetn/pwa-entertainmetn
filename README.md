@@ -5,9 +5,10 @@
 Sonar:
 [![Quality Gate](https://sonarcloud.io/api/badges/gate?key=client.xstr.me)](https://sonarcloud.io/dashboard?id=client.xstr.me) [![Technical debt ratio](https://sonarcloud.io/api/badges/measure?key=client.xstr.me&metric=sqale_debt_ratio)](https://sonarcloud.io/dashboard?id=client.xstr.me) [![vulnerabilities](https://sonarcloud.io/api/badges/measure?key=client.xstr.me&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=client.xstr.me) [![code_smells](https://sonarcloud.io/api/badges/measure?key=client.xstr.me&metric=code_smells)](https://sonarcloud.io/dashboard?id=client.xstr.me) [![bugs](https://sonarcloud.io/api/badges/measure?key=client.xstr.me&metric=bugs)](https://sonarcloud.io/dashboard?id=client.xstr.me)
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/guedouari/xstr.me.svg)](https://greenkeeper.io/)
+
 # Xstr.Me
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/guedouari/xstr.me.svg)](https://greenkeeper.io/)
 this is the client
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli)
 

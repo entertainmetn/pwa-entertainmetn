@@ -19,17 +19,19 @@ cache:
     - node_modules
 before_install:
   - pip install --user codecov
+  - export XSTR_VERSION=$(node -p "require('./package.json').version")
 script:
-  - yarn run lint
+  - yarn lint
   - yarn test
-  - sonar-scanner -Dsonar.projectKey=client.xstr.me -X
+  - yarn e2e
+  - sonar-scanner -Dsonar.projectVersion=$XSTR_VERSION
 after_success:
   - sh scripts/build-ng.sh
   - codecov
   - sh scripts/patch-gh-pages.sh
   - sh scripts/package-www.sh
 before_deploy:
-  - echo "after deploy steps"
+  - echo "before deploy steps"
 deploy:
   - provider: pages
     local_dir: www

@@ -6,3 +6,5 @@ export * from './xstr-sidebar';
 export * from './xstr-sidebar-footer';
 export * from './xstr-sidebar-form';
 export * from './xstr-sidebar-header';
+export * from './xstr-sidebar-minimizer';
+export * from './xstr-sidebar-nav';

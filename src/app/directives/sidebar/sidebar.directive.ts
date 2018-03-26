@@ -4,7 +4,7 @@ import { Directive, HostListener } from '@angular/core';
 * Allows the sidebar to be toggled via click.
 */
 @Directive({
-  selector: '[xstrSidebarToggler]',
+  selector: '[xstrSidebarToggler]'
 })
 export class SidebarToggleDirective {
   constructor() { }
@@ -26,6 +26,19 @@ export class SidebarMinimizeDirective {
   toggleOpen($event: any) {
     $event.preventDefault();
     document.querySelector('body').classList.toggle('sidebar-minimized');
+  }
+}
+
+@Directive({
+  selector: '[xstrBrandMinimizer]'
+})
+export class BrandMinimizeDirective {
+  constructor() { }
+
+  @HostListener('click', ['$event'])
+  toggleOpen($event: any) {
+    $event.preventDefault();
+    document.querySelector('body').classList.toggle('brand-minimized');
   }
 }
 
@@ -87,6 +100,7 @@ export class SidebarOffCanvasCloseDirective {
 export const SIDEBAR_TOGGLE_DIRECTIVES = [
     SidebarToggleDirective,
     SidebarMinimizeDirective,
+    BrandMinimizeDirective,
     SidebarOffCanvasCloseDirective,
-    MobileSidebarToggleDirective,
+    MobileSidebarToggleDirective
 ];

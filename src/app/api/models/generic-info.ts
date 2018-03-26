@@ -6,5 +6,7 @@ export interface GenericInfo {
 
   name?: string;
 
+  serverName?: string;
+
   version?: string;
 }

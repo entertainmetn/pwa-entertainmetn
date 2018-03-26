@@ -1,17 +1,22 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { browser } from 'protractor';
 import { environment } from './../environments/environment';
+
 import { FullLayoutComponent } from './containers/full-layout/full-layout.component';
 import { SimpleLayoutComponent } from './containers/simple-layout/simple-layout.component';
+import { XstrShellComponent } from './containers/xstr-shell/xstr-shell.component';
 import { HomeComponent } from './pages/home/home.component';
 
 import { PagesModule } from './views/pages/pages.module';
 
 const routes: Routes = [
+
   {
     path: '',
     component: FullLayoutComponent,
+    data: {
+      title: 'Home',
+    },
     children: [
       {
         path: '',
@@ -21,15 +26,6 @@ const routes: Routes = [
           title: 'Home',
         },
       },
-    ],
-  },
-  {
-    path: '',
-    component: FullLayoutComponent,
-    data: {
-      title: 'Home',
-    },
-    children: [
       {
         path: 'dashboard',
         redirectTo: '',
@@ -53,17 +49,16 @@ const routes: Routes = [
     ],
   },
   {
-    path: '',
+    path: 'pages',
     component: SimpleLayoutComponent,
     data: {
       title: 'Pages',
     },
-    children: [
-      {
-        path: '',
-        loadChildren: './views/pages/pages.module#PagesModule',
-      },
-    ],
+    loadChildren: './views/pages/pages.module#PagesModule',
+  },
+  {
+    path: 'shell',
+    component: XstrShellComponent,
   },
   {
     path: '',

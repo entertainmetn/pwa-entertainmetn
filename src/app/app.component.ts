@@ -1,5 +1,6 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSidenav, MatSidenavModule } from '@angular/material';
+import { NavigationEnd, Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 
 @Component({
@@ -7,7 +8,7 @@ import { Observable } from 'rxjs/Observable';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   @ViewChild('demosidenav') public myNav: MatSidenav;
   title = 'xstr';
   pixelWidth: number;
@@ -16,11 +17,20 @@ export class AppComponent {
   sideNavMode = 'side';
   sideNavPos = 'start';
 
-  constructor() {
+  constructor(private router: Router) {
     this.pixelWidth = document.defaultView.innerWidth;
     this.pixelHeight = document.defaultView.innerHeight;
     console.log('size intialized');
     this.sideNavDynamic();
+  }
+
+  ngOnInit() {
+    this.router.events.subscribe((evt) => {
+      if (!(evt instanceof NavigationEnd)) {
+        return;
+      }
+      window.scrollTo(0, 0);
+    });
   }
 
   onResize(event) {
@@ -45,5 +55,6 @@ export class AppComponent {
       this.sideNavMode = 'over';
       this.sideNavPos = 'end';
     }
+
   }
 }
