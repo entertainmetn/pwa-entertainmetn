@@ -20,7 +20,7 @@ export const navigation = [
   {
     name: 'search',
     url: '/search',
-    icon: 'icon-search',
+    icon: 'icon-star',
   },
   {
     title: true,

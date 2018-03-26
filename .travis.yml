@@ -19,11 +19,12 @@ cache:
     - node_modules
 before_install:
   - pip install --user codecov
+  - export XSTR_VERSION=$(node -p "require('./package.json').version")
 script:
   - yarn lint
   - yarn test
   - yarn e2e
-  - sonar-scanner -Dsonar.projectKey=client.xstr.me -X
+  - sonar-scanner -Dsonar.projectVersion=$XSTR_VERSION
 after_success:
   - sh scripts/build-ng.sh
   - codecov

@@ -1,6 +1,6 @@
 {
   "name": "xstr.me",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
@@ -60,5 +60,10 @@
     "tslint": "5.9.1",
     "tslint-sonarts": "1.6.0",
     "typescript": "2.6.2"
+  },
+  "greenkeeper": {
+    "ignore": [
+      "typescript"
+    ]
   }
 }
