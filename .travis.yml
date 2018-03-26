@@ -24,7 +24,7 @@ script:
   - yarn lint
   - yarn test
   - yarn e2e
-  - sonar-scanner -Dsonar.projectVersion=$XSTR_VERSION
+  - sonar-scanner -Dsonar.projectVersion=$XSTR_VERSION -Dsonar.branch.name=$TRAVIS_BRANCH
 after_success:
   - sh scripts/build-ng.sh
   - codecov
