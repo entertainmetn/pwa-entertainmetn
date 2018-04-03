@@ -20,6 +20,7 @@ cache:
 before_install:
   - pip install --user codecov
   - export XSTR_VERSION=$(node -p "require('./package.json').version")
+  - yarn webdriver-manager update
 script:
   - yarn lint
   - yarn test
