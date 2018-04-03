@@ -23,12 +23,12 @@ before_install:
   - pip install --user codecov
   - export XSTR_VERSION=$(node -p "require('./package.json').version")
 script:
-  - yarn webdriver-manager update
+  - yarn webdriver-manager update --gecko
   - yarn lint
   - yarn test
   - yarn e2e
-  - sonar-scanner -Dsonar.projectVersion=$XSTR_VERSION
 after_success:
+  - sonar-scanner -Dsonar.projectVersion=$XSTR_VERSION
   - sh scripts/build-ng.sh
   - codecov
   - sh scripts/patch-gh-pages.sh
