@@ -21,8 +21,7 @@ matrix:
   fast_finish: true
 before_install:
   - pip install --user codecov
-  - export XSTR_VERSION=$(node -p "require('./package.json').version")  
-  - yarn webdriver-manager update --gecko
+  - export XSTR_VERSION=$(node -p "require('./package.json').version")
 script:
   - yarn lint
   - yarn test
