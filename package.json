@@ -11,7 +11,7 @@
     "build:release": "ng build --prod --output-hashing=none --bh ./",
     "test": "ng test --code-coverage --config karma.ci.conf.js",
     "lint": "ng lint --force > issues.json",
-    "e2e": "ng e2e -c protractor.ci.conf.js"
+    "e2e": "ng e2e --no-webdriver-update -c protractor.ci.conf.js"
   },
   "private": true,
   "dependencies": {
