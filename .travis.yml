@@ -19,11 +19,44 @@ matrix:
 before_install:
   - pip install --user codecov
   - export XSTR_VERSION=$(node -p "require('./package.json').version")
+script:
+  - yarn lint
+  - yarn test
+  - yarn e2e
 after_success:
-  - sonar-scanner -Dsonar.projectVersion=$XSTR_VERSION -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$sonarcloud_token -Dsonar.organization=guedouari-github -Dsonar.branch.name=$TRAVIS_BRANCH
+  - sonar-scanner -Dsonar.projectVersion=$XSTR_VERSION
   - sh scripts/build-ng.sh
   - codecov
   - sh scripts/patch-gh-pages.sh
   - sh scripts/package-www.sh
 before_deploy:
-  - echo "before deploy steps ..."
+  - echo "before deploy steps"
+deploy:
+  - provider: pages
+    local_dir: www
+    skip_cleanup: true
+    github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
+    on:
+      branch: next
+  - provider: script
+    skip_cleanup: true
+    script: sh scripts/deploy-prod.sh
+    on:
+      branch: master
+  - provider: releases
+    api_key: $GITHUB_TOKEN
+    file_glob: true
+    file: client.xstr.me-*.tar.gz
+    skip_cleanup: true
+    on:
+      tags: true
+  - provider: script    
+    script: sh scripts/deploy-desktop.sh
+    skip_cleanup: true
+    on:
+      tags: true
+  - provider: script    
+    script: sh scripts/deploy-mobile.sh
+    skip_cleanup: true
+    on:
+      tags: true
