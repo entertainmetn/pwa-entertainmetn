@@ -3,7 +3,9 @@ node_js:
   - "8"
 dist: trusty
 addons:
-  sonarcloud
+  sonarcloud:
+    organization: $sonarcloud_organization_key
+    token: $sonarcloud_token
   apt:
     packages:
     - lftp
