@@ -24,4 +24,4 @@ after_success:
   - sh scripts/patch-gh-pages.sh
   - sh scripts/package-www.sh
 before_deploy:
-  - echo "before deploy steps"
+  - echo "before deploy steps ..."
