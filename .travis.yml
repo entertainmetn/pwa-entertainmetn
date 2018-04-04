@@ -3,12 +3,6 @@ node_js:
   - "8"
 dist: trusty
 addons:
-  sonarcloud:
-    organization: $sonarcloud_organization_key
-    token: $sonarcloud_token
-    branches:
-      - master
-      - next
   apt:
     packages:
     - lftp
@@ -17,6 +11,8 @@ cache:
   yarn: true
   directories:
     - node_modules
+matrix:
+  fast_finish: true
 before_install:
   - pip install --user codecov
   - export XSTR_VERSION=$(node -p "require('./package.json').version")
@@ -24,8 +20,8 @@ script:
   - yarn lint
   - yarn test
   - yarn e2e
-  - sonar-scanner -Dsonar.projectVersion=$XSTR_VERSION
 after_success:
+  - sonar-scanner -Dsonar.projectVersion=$XSTR_VERSION -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$sonarcloud_token -Dsonar.organization=guedouari-github -Dsonar.branch.name=$TRAVIS_BRANCH
   - sh scripts/build-ng.sh
   - codecov
   - sh scripts/patch-gh-pages.sh
