@@ -42,7 +42,7 @@
     "@angular/compiler-cli": "^5.2.9",
     "@angular/language-service": "^5.2.9",
     "@types/jasmine": "^2.8.6",
-    "@types/jasminewd2": "^2.0.3",
+    "@types/jasminewd2": "^2.0.4",
     "@types/node": "^9.6.1",
     "@types/openlayers": "^4.6.7",
     "codelyzer": "^4.2.1",
