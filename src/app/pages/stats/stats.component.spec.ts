@@ -1,9 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { BehaviorSubject } from 'rxjs';
 import { GenericInfo } from './../../api/models/generic-info';
 import { GenericInfoControllerService } from './../../api/services/generic-info-controller.service';
 
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { StatsComponent } from './stats.component';
 
 // ADDED MOCK CLASS

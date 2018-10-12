@@ -2,7 +2,7 @@ import { MediaBrowserService } from './../media-browser.service';
 import { LoadRouter } from './media-is-valid.guard';
 import { Injectable } from '@angular/core';
 import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 
 export interface LoadRouter {
   loadRouter(router: Router): boolean;

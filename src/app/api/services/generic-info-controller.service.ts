@@ -5,9 +5,9 @@ import {
   HttpHeaders, HttpParams } from '@angular/common/http';
 import { BaseService } from '../base-service';
 import { ApiConfiguration } from '../api-configuration';
-import { Observable } from 'rxjs/Observable';
-import { map } from 'rxjs/operators/map';
-import { filter } from 'rxjs/operators/filter';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { filter } from 'rxjs/operators';
 
 import { GenericInfo } from '../models/generic-info';
 

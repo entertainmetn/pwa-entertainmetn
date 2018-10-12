@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
-import TileLayer from 'ol/layer/tile';
+/*import TileLayer from 'ol/layer/tile';
 import Map from 'ol/map';
 import XYZ from 'ol/source/xyz';
-import View from 'ol/view';
+import View from 'openlayers';*/
 
 @Component({
   selector: 'xstr-settings',
@@ -11,11 +11,11 @@ import View from 'ol/view';
   styleUrls: ['./settings.component.css'],
 })
 export class SettingsComponent implements OnInit {
-  public olmap: Map;
+  //public olmap: Map;
   constructor() { }
 
   ngOnInit() {
-    this.olmap = new Map({
+    /*this.olmap = new Map({
       target: 'map',
       layers: [
         new TileLayer({
@@ -28,7 +28,7 @@ export class SettingsComponent implements OnInit {
         center: [0, 0],
         zoom: 2,
       }),
-    });
+    });*/
   }
 
 }

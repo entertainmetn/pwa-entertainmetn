@@ -32,19 +32,19 @@ const routes: Routes = [
       },
       {
         path: 'browse',
-        loadChildren: 'app/pages/browse/browse.module#BrowseModule', // lazyLoaded Module(with routes)
+        loadChildren: 'src/app/pages/browse/browse.module#BrowseModule', // lazyLoaded Module(with routes)
       },
       {
         path: 'search',
-        loadChildren: 'app/pages/search/search.module#SearchModule', // lazyLoaded Module(with routes)
+        loadChildren: 'src/app/pages/search/search.module#SearchModule', // lazyLoaded Module(with routes)
       },
       {
         path: 'stats',
-        loadChildren: 'app/pages/stats/stats.module#StatsModule', // lazyLoaded Module(with routes)
+        loadChildren: 'src/app/pages/stats/stats.module#StatsModule', // lazyLoaded Module(with routes)
       },
       {
         path: 'settings',
-        loadChildren: 'app/pages/settings/settings.module#SettingsModule', // lazyLoaded Module(with routes)
+        loadChildren: 'src/app/pages/settings/settings.module#SettingsModule', // lazyLoaded Module(with routes)
       },
     ],
   },
@@ -69,7 +69,7 @@ const routes: Routes = [
     children: [
       {
         path: ':mtype/:id',
-        loadChildren: 'app/media-browser/media-browser.module#MediaBrowserModule',
+        loadChildren: 'src/app/media-browser/media-browser.module#MediaBrowserModule',
       },
     ],
   },

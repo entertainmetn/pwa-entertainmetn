@@ -1,7 +1,7 @@
 import { MediaBrowserService } from '../media-browser.service';
 import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 
 @Injectable()
 export class SeasonIsValidGuard implements CanActivate {
