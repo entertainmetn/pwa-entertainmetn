@@ -1,4 +1,4 @@
-import { TestBed, inject } from '@angular/core/testing';
+import {  inject, TestBed } from '@angular/core/testing';
 
 import { BrowseService } from './browse.service';
 describe('BrowseService', () => {
@@ -7,7 +7,7 @@ describe('BrowseService', () => {
     TestBed.configureTestingModule({
       providers: [
         BrowseService
-      ]
+      ],
     });
   });
 

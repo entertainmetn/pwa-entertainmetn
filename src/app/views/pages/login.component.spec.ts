@@ -8,7 +8,7 @@ describe('LoginComponent', () => {
       imports: [
       ],
       declarations: [
-        LoginComponent
+        LoginComponent,
       ],
     }).compileComponents();
   });

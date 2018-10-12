@@ -15,12 +15,12 @@ export class BrowseComponent implements OnInit {
     this.route.queryParamMap.forEach(
       params => {
         // console.log('queryparam changed')
-        params.keys.forEach(paramkey => {
+        params.keys.forEach( (paramkey) => {
           this.paramString = this.paramString + ' ' + paramkey + ' = ' + params.getAll(paramkey);
           // console.log('param found => ' + paramkey + ' = ' + params.get(paramkey));
         });
 
-      }
+      },
     );
   }
 

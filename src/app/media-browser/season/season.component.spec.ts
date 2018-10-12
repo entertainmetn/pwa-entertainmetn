@@ -38,7 +38,7 @@ describe('SeasonComponent', () => {
       providers: [
         { provide: ActivatedRoute, useValue: mockActivatedRoute },
       ],
-      declarations: [SeasonComponent]
+      declarations: [SeasonComponent],
     })
       .compileComponents();
   }));

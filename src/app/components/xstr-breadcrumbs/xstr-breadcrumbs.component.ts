@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs/operators';
 
 @Component({
@@ -12,17 +12,17 @@ import { filter } from 'rxjs/operators';
       <a *ngIf="!last" [routerLink]="breadcrumb.url">{{breadcrumb.label.title}}</a>
       <span *ngIf="last" [routerLink]="breadcrumb.url">{{breadcrumb.label.title}}</span>
     </li>
-  </ng-template>`
+  </ng-template>`,
 })
 export class XstrBreadcrumbsComponent {
   breadcrumbs: Array<Object>;
   constructor(
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
   ) {
     this.router.events.pipe(
       filter(
-        (event) => event instanceof NavigationEnd)
+        (event) => event instanceof NavigationEnd),
     ).subscribe((event) => {
       this.breadcrumbs = [];
       let currentRoute = this.route.root,
@@ -31,13 +31,13 @@ export class XstrBreadcrumbsComponent {
         const childrenRoutes = currentRoute.children;
         currentRoute = null;
         // tslint:disable-next-line:no-shadowed-variable
-        childrenRoutes.forEach(route => {
+        childrenRoutes.forEach((route) => {
           if (route.outlet === 'primary') {
             const routeSnapshot = route.snapshot;
             url += '/' + routeSnapshot.url.map(segment => segment.path).join('/');
             this.breadcrumbs.push({
               label: route.snapshot.data,
-              url: url
+              url: url,
             });
             currentRoute = route;
           }

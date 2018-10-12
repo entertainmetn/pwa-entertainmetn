@@ -8,7 +8,7 @@ describe('RegisterComponent', () => {
       imports: [
       ],
       declarations: [
-        RegisterComponent
+        RegisterComponent,
       ],
     }).compileComponents();
   });

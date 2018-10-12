@@ -1,5 +1,5 @@
-import { TestBed } from '@angular/core/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { TestBed } from '@angular/core/testing';
 
 import { P404Component } from './404.component';
 
@@ -9,9 +9,9 @@ describe('P500Component', () => {
       imports: [
       ],
       declarations: [
-        P404Component
+        P404Component,
       ],
-      schemas: [NO_ERRORS_SCHEMA]
+      schemas: [NO_ERRORS_SCHEMA],
     }).compileComponents();
   });
 
