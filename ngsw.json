@@ -1,0 +1,53 @@
+{
+  "configVersion": 1,
+  "index": "/xstr.me/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "urls": [
+        "/xstr.me/index.html",
+        "/xstr.me/0.8a1ac2ecc444bc4e7dcc.chunk.js",
+        "/xstr.me/1.e535329ef3b3b35873f9.chunk.js",
+        "/xstr.me/2.fe9b560b5ce5aa5b3c41.chunk.js",
+        "/xstr.me/3.3cab004d3a7d7b9d9f11.chunk.js",
+        "/xstr.me/4.ef4b2568a6f030ee138b.chunk.js",
+        "/xstr.me/5.602555f48a219bf8c24c.chunk.js",
+        "/xstr.me/inline.2c261099ebab2380cc44.bundle.js",
+        "/xstr.me/main.794e4eaea8948c0dd7ff.bundle.js",
+        "/xstr.me/polyfills.01d715f0e86242a68138.bundle.js",
+        "/xstr.me/styles.79c80f5f860a2f392db5.bundle.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "urls": [
+        "/xstr.me/assets/img/favicon.png",
+        "/xstr.me/assets/img/logo.png",
+        "/xstr.me/assets/img/avatars/6.jpg"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/xstr.me/0.8a1ac2ecc444bc4e7dcc.chunk.js": "5495adad1134c596797616e4e85e0e2638fb9835",
+    "/xstr.me/assets/img/favicon.png": "2c2ee7ac0cf2e631463b0ed6e42054b43942b8a6",
+    "/xstr.me/1.e535329ef3b3b35873f9.chunk.js": "390a7c5dbc5a0fc49d78e11f7c384051fadc4966",
+    "/xstr.me/assets/img/logo.png": "0be6617f0d54a0b59fd2b67a9fcc3993fa4f689b",
+    "/xstr.me/2.fe9b560b5ce5aa5b3c41.chunk.js": "9be9e28a00db62da8718bf521b08d5b4e75736e0",
+    "/xstr.me/assets/img/avatars/6.jpg": "7c5c89df51787668530a1108e27db70b6b44d3af",
+    "/xstr.me/3.3cab004d3a7d7b9d9f11.chunk.js": "a564589fe0800fe8a094c0542f0ba27563334791",
+    "/xstr.me/4.ef4b2568a6f030ee138b.chunk.js": "cd14d92beb40f812d1cbfb893647f15aba89619f",
+    "/xstr.me/5.602555f48a219bf8c24c.chunk.js": "9bd63c94c86c239718c800aa8a453a1bf288dcb7",
+    "/xstr.me/inline.2c261099ebab2380cc44.bundle.js": "1667c949c8918efc0d6304382bb89b2a826fb25f",
+    "/xstr.me/main.794e4eaea8948c0dd7ff.bundle.js": "4d913155d7942645982c2c21c5995759013a5779",
+    "/xstr.me/polyfills.01d715f0e86242a68138.bundle.js": "83c4b635838ece74e471005db8bfa1dc1e090547",
+    "/xstr.me/styles.79c80f5f860a2f392db5.bundle.css": "638d36ded80dcf7e585bad0cf0a6f8c7ba87573e",
+    "/xstr.me/index.html": "07191d0a5a08eea7e8554b7136b31eae82179ee2"
+  }
+}
